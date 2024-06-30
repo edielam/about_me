@@ -3,23 +3,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const BlogSection = styled(motion.section)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const BlogCard = styled(motion.div)`
+  background: #1e1e1e;
+  border: 1px solid #0ff;
+  border-radius: 10px;
+  margin: 1em;
   padding: 2em;
-  background: #f0f0f0;
-  color: #333;
+  width: 45%;
+  text-align: left;
+  &:hover {
+    border-color: #0f0;
+  }
 `;
 
 const BlogTitle = styled.h3`
-  font-size: 2rem;
-  color: #0070f3;
+  font-size: 1.5rem;
+  color: #0f0;
 `;
 
-const BlogExcerpt = styled.p`
+const BlogDescription = styled.p`
   font-size: 1.2rem;
-  color: #555;
+  color: #cfcfcf;
 `;
 
 const BlogLink = styled(motion.a)`
@@ -27,26 +31,25 @@ const BlogLink = styled(motion.a)`
   padding: 0.5em 1em;
   margin-top: 1em;
   font-size: 1rem;
-  color: #fff;
-  background: #0070f3;
+  color: #000;
+  background: #0ff;
   border-radius: 5px;
   text-decoration: none;
   &:hover {
-    background: #005bb5;
+    background: #0f0;
   }
 `;
 
 const RecentBlogPost = () => {
   return (
-    <BlogSection
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+    <BlogCard
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
     >
-      <BlogTitle>Recent Blog Post: Concurrency Programming with Rust</BlogTitle>
-      <BlogExcerpt>
-        Learn about advanced concurrency programming techniques in Rust to build efficient and safe applications.
-      </BlogExcerpt>
+      <BlogTitle>Recent Blog: Debugging React Applications</BlogTitle>
+      <BlogDescription>
+        Learn about common but troublesome challenges in React applications and how to effectively debug them.
+      </BlogDescription>
       <BlogLink
         href="#blog"
         whileHover={{ scale: 1.1 }}
@@ -54,7 +57,7 @@ const RecentBlogPost = () => {
       >
         Read More
       </BlogLink>
-    </BlogSection>
+    </BlogCard>
   );
 };
 

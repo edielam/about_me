@@ -3,13 +3,17 @@ import React from 'react';
 import Hero from './components/Hero';
 import HighlightedProject from './components/HighlightedProject';
 import RecentBlogPost from './components/RecentBlogPost';
+import About from './components/About';
+import ProjectsList from './components/ProjectsList';
+import ContactForm from './components/ContactForm';
 
 const App = () => {
   return (
     <div>
       <Hero />
-      <HighlightedProject />
-      <RecentBlogPost />
+      <About />
+      <ProjectsList />
+      <ContactForm />
     </div>
   );
 };
