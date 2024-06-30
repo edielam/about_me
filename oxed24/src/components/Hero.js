@@ -54,7 +54,7 @@ const Hero = () => {
         animate={{ y: 0 }}
         transition={{ duration: 1 }}
       >
-        Hi, I'm [Your Name]
+        Hi, I'm Edward Lampoh
       </HeroTitle>
       <HeroSubtitle
         initial={{ y: 50 }}
