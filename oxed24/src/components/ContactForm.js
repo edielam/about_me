@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const ContactSection = styled(motion.section)`
+  grid-area: contact;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,55 +18,61 @@ const ContactTitle = styled.h2`
   color: #0ff;
 `;
 
-const ContactForm = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 80%;
   max-width: 600px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2em;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0ff;
 `;
 
 const Input = styled.input`
-  width: 100%;
-  padding: 1em;
-  margin: 0.5em 0;
-  border: 1px solid #0ff;
-  border-radius: 5px;
-  background: #121212;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1rem;
   color: #cfcfcf;
-  &:focus {
-    border-color: #0f0;
-  }
-`;
-
-const TextArea = styled.textarea`
-  width: 100%;
-  padding: 1em;
-  margin: 0.5em 0;
-  border: 1px solid #0ff;
-  border-radius: 5px;
   background: #121212;
-  color: #cfcfcf;
-  &:focus {
-    border-color: #0f0;
-  }
-`;
-
-const SubmitButton = styled(motion.button)`
-  padding: 1em 2em;
-  margin-top: 1em;
-  font-size: 1.2rem;
-  color: #fff;
-  background: #0ff;
   border: none;
+  border-bottom: 2px solid #0ff;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #0f0;
+  }
+`;
+
+const Textarea = styled.textarea`
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1rem;
+  color: #cfcfcf;
+  background: #121212;
+  border: none;
+  border-bottom: 2px solid #0ff;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #0f0;
+  }
+`;
+
+const SubmitButton = styled.button`
+  padding: 0.5em;
+  font-size: 1rem;
+  color: #0ff;
+  background: #121212;
+  border: 2px solid #0ff;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
-    background: #0f0;
+    background: #0ff;
+    color: #121212;
   }
 `;
 
-const Contact = () => {
+const ContactForm = () => {
   return (
     <ContactSection
       initial={{ opacity: 0 }}
@@ -73,20 +80,14 @@ const Contact = () => {
       transition={{ duration: 1 }}
     >
       <ContactTitle>Contact Me</ContactTitle>
-      <ContactForm>
-        <Input type="text" placeholder="Name" required />
-        <Input type="email" placeholder="Email" required />
-        <TextArea rows="5" placeholder="Message" required />
-        <SubmitButton
-          type="submit"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Send
-        </SubmitButton>
-      </ContactForm>
+      <Form>
+        <Input type="text" placeholder="Name" />
+        <Input type="email" placeholder="Email" />
+        <Textarea rows="5" placeholder="Message" />
+        <SubmitButton type="submit">Send</SubmitButton>
+      </Form>
     </ContactSection>
   );
 };
 
-export default Contact;
+export default ContactForm;
