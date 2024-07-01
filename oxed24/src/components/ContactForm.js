@@ -62,10 +62,14 @@ const Input = styled.input`
   padding: 0.5rem;
   margin-bottom: 1rem;
   color: #cfcfcf;
+  font-weight: 600;
   &:focus {
     outline: none;
     border-color: #0f0;
-  }
+  };
+  &::placeholder {
+      color: rgba(207, 207, 207, 0.7);
+    }
 `;
 
 const TextArea = styled.textarea`
@@ -77,10 +81,14 @@ const TextArea = styled.textarea`
   color: #cfcfcf;
   resize: vertical;
   min-height: 100px;
+  font-weight: 600;
   &:focus {
     outline: none;
     border-color: #0f0;
-  }
+  };
+  &::placeholder {
+      color: rgba(207, 207, 207, 0.7);
+    }
 `;
 
 const SubmitButton = styled(motion.button)`

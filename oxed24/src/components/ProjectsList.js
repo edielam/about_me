@@ -13,7 +13,7 @@ const ProjectsSection = styled(motion.section)`
   padding: 2rem;
 `;
 const ProjectContainer = styled.div`
-  background: rgba(0, 255, 255, 0.4);
+  background: rgba(0, 100, 100, 0.5);
   border-radius: 10px;
   padding: 2rem;
   width: 90%;
