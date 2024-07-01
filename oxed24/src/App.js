@@ -41,11 +41,25 @@ const BackSea = styled(motion.section)`
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   overflow: hidden;
-  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
 `;
+
 const ContentArea = styled(motion.main)`
+  position: relative;
   overflow-y: auto;
   padding: 0rem;
+  z-index: 1;
+`;
+
+const SectionWrapper = styled(motion.div)`
+  position: relative;
+  z-index: 1;
 `;
 
 const App = () => {
@@ -110,15 +124,31 @@ const App = () => {
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('blog')}>Blog</NavItem>
       </Sidebar>
       <ContentArea>
+        <BackSea>
+          <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
+        </BackSea>
         <AnimatePresence mode="wait">
           {currentSection === 'hero' && <Hero key="hero" />}
-          <BackSea>
-            <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0 }} />
-            {currentSection === 'about' && <About key="about" />}
-            {currentSection === 'projects' && <ProjectsList key="projects" />}
-            {currentSection === 'contact' && <ContactForm key="contact" />}
-            {currentSection === 'blog' && <BlogList key="blog" />}
-          </BackSea>
+          {currentSection === 'about' && (
+            <SectionWrapper key="about">
+              <About />
+            </SectionWrapper>
+          )}
+          {currentSection === 'projects' && (
+            <SectionWrapper key="projects">
+              <ProjectsList />
+            </SectionWrapper>
+          )}
+          {currentSection === 'contact' && (
+            <SectionWrapper key="contact">
+              <ContactForm />
+            </SectionWrapper>
+          )}
+          {currentSection === 'blog' && (
+            <SectionWrapper key="blog">
+              <BlogList />
+            </SectionWrapper>
+          )}
         </AnimatePresence>
       </ContentArea>
     </AppContainer>

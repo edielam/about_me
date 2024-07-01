@@ -8,6 +8,7 @@ const ProjectsSection = styled(motion.section)`
   flex-direction: column;
   align-items: center;
   height: 100%;
+  z-index: 1;
 `;
 
 const ProjectsTitle = styled.h2`
