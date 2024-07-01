@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Skill, SkillsContainer } from '../ViewConstants';
 
 const ProjectsSection = styled(motion.section)`
   display: flex;
@@ -120,26 +121,30 @@ const ProjectsList = () => {
       title: "CortexCode",
       description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
-      link: "https://github.com/yourusername/cortexcode"
+      link: "https://github.com/yourusername/cortexcode",
+      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image: "/images/oxterm.jpg",
-      link: "https://github.com/yourusername/oxterm"
+      link: "https://github.com/yourusername/oxterm",
+      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
     },
     {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
-      image: "/images/jeflix.jpg",
-      link: "https://github.com/yourusername/jeflix"
+      image: "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
+      link: "https://github.com/yourusername/jeflix",
+      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
     },
     {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image: "/images/tcp.jpg",
-      link: "https://github.com/yourusername/tcp-from-scratch"
-    }
+      link: "https://github.com/yourusername/tcp-from-scratch",
+      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
+    },
   ];
 
   return (
@@ -165,9 +170,9 @@ const ProjectsList = () => {
               transition={{ duration: 0.3 }}
             >
               <ProjectTitle>{project.title}</ProjectTitle>
-              <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
+              {/* <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
                 View Project
-              </ProjectLink>
+              </ProjectLink> */}
             </ProjectOverlay>
           </ProjectItem>
         ))}
@@ -190,6 +195,13 @@ const ProjectsList = () => {
               <CloseButton onClick={() => setSelectedProject(null)}>&times;</CloseButton>
               <ProjectTitle>{selectedProject.title}</ProjectTitle>
               <ProjectDescription>{selectedProject.description}</ProjectDescription>
+              <SkillsContainer>
+                {selectedProject.skills.map((skill, index) => (
+                  <Skill key={index} whileHover={{ scale: 1.1 }}>
+                    {skill}
+                  </Skill>
+                ))}
+              </SkillsContainer>
               <ProjectLink href={selectedProject.link} target="_blank" rel="noopener noreferrer">
                 View Project
               </ProjectLink>

@@ -93,7 +93,7 @@ const Hero = () => {
     <HeroSection>
       <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0 }} />
       <TerminalWindow>
-        <TerminalPrompt>cargo run myspace</TerminalPrompt>
+        <TerminalPrompt>cargo add myspace</TerminalPrompt>
         <TerminalOutput>Welcome to Eddy's Universe</TerminalOutput>
         <TerminalPrompt>explore projects</TerminalPrompt>
         <TerminalOutput>Loading project data...</TerminalOutput>

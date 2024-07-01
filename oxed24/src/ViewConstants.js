@@ -89,3 +89,28 @@ export const pageVariants = {
 export const pageTransition = {
   duration: 1.5,
 };
+
+export const SkillsContainer = styled.div`
+  // background: rgba(0, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem 0rem;
+`;
+
+// export const SkillCategory = styled.div`
+//   margin-bottom: 1rem;
+// `;
+
+// export const SkillCategoryTitle = styled.h3`
+//   color: #0ff;
+//   margin-bottom: 0.5rem;
+// `;
+
+export const Skill = styled(motion.span)`
+  background: #0ff;
+  color: #000;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 0.8rem;
+`;
