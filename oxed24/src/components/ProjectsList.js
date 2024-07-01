@@ -146,16 +146,23 @@ const ProjectsList = () => {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image: "/images/tcp.jpg",
-      link: "https://github.com/yourusername/tcp-from-scratch",
+      link: "https://github.com/username/tcp-from-scratch",
       skills: ['Rust', 'Network Programming', 'TCP/IP Protocol', 'Socket Programming', 'Packet Handling', 'Error Handling', 'Flow Control', 'Congestion Control']
     },
     {
       title: "Savage Rampage",
       description: "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
       image: "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
-      link: "https://github.com/yourusername/savage-rampage",
+      link: "https://github.com/username/savage-rampage",
       skills: ['Unity Engine', 'C#', '2D Game Development', 'Physics Simulation', 'Sprite Animation', 'Game Design', 'Object-Oriented Programming']
-    }
+    },
+    {
+      title: "My Space",
+      description: "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
+      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.png?raw=true",
+      link: "https://domain.com",
+      skills: ['React', 'Three.js', 'JavaScript', 'Responsive Design', '3D Graphics', 'Web Animation']
+    },
   ];
 
   return (

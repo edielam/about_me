@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 const HeroSection = styled(motion.section)`
   height: 100vh;
-  background: #0e2a47;
+  background: #92bde9;
   color: #cfcfcf;
   overflow: hidden;
   position: relative;
@@ -52,7 +52,7 @@ const Hero = () => {
     // Create particles
     const particlesCount = 1000;
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesMaterial = new THREE.PointsMaterial({ color: '#0ff', size: 0.05 });
+    const particlesMaterial = new THREE.PointsMaterial({ color: '#0e2a47', size: 0.05 });
 
     const particlesPositions = new Float32Array(particlesCount * 3);
     for (let i = 0; i < particlesCount * 3; i++) {
