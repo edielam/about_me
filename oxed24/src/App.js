@@ -75,7 +75,18 @@ const App = () => {
           <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
         </BackSea>
         <AnimatePresence mode="wait">
-          {currentSection === 'hero' && <Hero key="hero" />}
+          {currentSection === 'hero' && (
+            <SectionWrapper
+              key="hero"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              <Hero />
+            </SectionWrapper>
+          )}
           {currentSection === 'about' && (
             <SectionWrapper
               key="about"
