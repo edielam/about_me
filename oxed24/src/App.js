@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import ProjectsList from './components/ProjectsList';
 import ContactForm from './components/ContactForm';
+import BlogList from './components/BlogList';
 
 const AppContainer = styled.div`
   display: grid;
@@ -51,6 +52,7 @@ const App = () => {
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('about')}>About</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('projects')}>Projects</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('contact')}>Contact</NavItem>
+        <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('blog')}>Blog</NavItem>
       </Sidebar>
       <ContentArea>
         <AnimatePresence mode="wait">
@@ -58,6 +60,7 @@ const App = () => {
           {currentSection === 'about' && <About key="about" />}
           {currentSection === 'projects' && <ProjectsList key="projects" />}
           {currentSection === 'contact' && <ContactForm key="contact" />}
+          {currentSection === 'blog' && <BlogList key="blog" />}
         </AnimatePresence>
       </ContentArea>
     </AppContainer>

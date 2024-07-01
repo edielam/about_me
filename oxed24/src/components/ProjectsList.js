@@ -1,4 +1,3 @@
-
 // src/components/ProjectsList.js
 import React from 'react';
 import styled from 'styled-components';
@@ -17,9 +16,10 @@ const ProjectsTitle = styled.h2`
   margin-bottom: 2rem;
 `;
 
-const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   width: 100%;
 `;
@@ -28,10 +28,24 @@ const ProjectCard = styled(motion.div)`
   background: rgba(30, 30, 30, 0.8);
   border: 1px solid #0ff;
   border-radius: 10px;
-  padding: 1.5rem;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+`;
+
+const ProjectImage = styled.img`
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+`;
+
+const ProjectContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ProjectTitle = styled.h3`
@@ -46,33 +60,41 @@ const ProjectDescription = styled.p`
   flex-grow: 1;
 `;
 
-const ProjectTech = styled.div`
-  margin-top: 1rem;
-  font-size: 0.9rem;
+const ProjectLink = styled.a`
   color: #0ff;
+  text-decoration: none;
+  margin-top: 1rem;
+  align-self: flex-start;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ProjectsList = () => {
   const projects = [
     {
       title: "CortexCode",
-      description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing using an isolated runtime environment.",
-      tech: "Tauri, Rust, React, WebSocket, libp2p, Docker Swarm"
+      description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
+      image: "/images/cortexcode.jpg",
+      link: "https://github.com/yourusername/cortexcode"
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
-      tech: "Rust"
+      image: "/images/oxterm.jpg",
+      link: "https://github.com/yourusername/oxterm"
     },
     {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
-      tech: "MongoDB, Express, React, Node.js"
+      image: "/images/jeflix.jpg",
+      link: "https://github.com/yourusername/jeflix"
     },
     {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
-      tech: "Rust"
+      image: "/images/tcp.jpg",
+      link: "https://github.com/yourusername/tcp-from-scratch"
     }
   ];
 
@@ -84,19 +106,24 @@ const ProjectsList = () => {
       transition={{ duration: 0.5 }}
     >
       <ProjectsTitle>Projects</ProjectsTitle>
-      <ProjectsGrid>
+      <ProjectsContainer>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectTech>Tech: {project.tech}</ProjectTech>
+            <ProjectImage src={project.image} alt={project.title} />
+            <ProjectContent>
+              <ProjectTitle>{project.title}</ProjectTitle>
+              <ProjectDescription>{project.description}</ProjectDescription>
+              <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
+                View Project
+              </ProjectLink>
+            </ProjectContent>
           </ProjectCard>
         ))}
-      </ProjectsGrid>
+      </ProjectsContainer>
     </ProjectsSection>
   );
 };

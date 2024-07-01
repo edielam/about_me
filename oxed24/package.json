@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.1",
+    "@notionhq/client": "^2.2.15",
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.108.1",
     "@react-three/fiber": "^8.16.8",
