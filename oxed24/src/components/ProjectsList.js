@@ -119,7 +119,7 @@ const ProjectsList = () => {
     {
       title: "CortexCode",
       description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
-      image: "/images/cortexcode.jpg",
+      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
       link: "https://github.com/yourusername/cortexcode"
     },
     {

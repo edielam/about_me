@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -29,24 +30,25 @@ export const NavItem = styled(motion.button)`
     color: #0f0;
   }
 `;
+
 export const BackSea = styled(motion.section)`
-  height: 100vh;
+  position: fixed;
+  left: 25%;
+  width: 80%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   overflow: hidden;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 0;
   pointer-events: none;
-  position: absolute;
 `;
 
 export const ContentArea = styled(motion.main)`
   position: relative;
   overflow-y: auto;
-  padding: 0rem;
+  padding: 0;
   z-index: 1;
+  height: 100vh;
 `;
 
 export const SectionWrapper = styled(motion.div)`
@@ -55,6 +57,7 @@ export const SectionWrapper = styled(motion.div)`
   height: 100%;
   z-index: 1;
 `;
+
 export const pageVariants = {
   initial: {
     opacity: 0,
@@ -64,9 +67,9 @@ export const pageVariants = {
   },
   out: {
     opacity: 0,
-  }
+  },
 };
 
 export const pageTransition = {
-  duration: 2.0,
+  duration: 1.5,
 };
