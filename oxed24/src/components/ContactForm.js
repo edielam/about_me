@@ -1,9 +1,11 @@
 
 // src/components/ContactForm.js
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const ContactSection = styled(motion.section)`
   display: flex;
@@ -79,6 +81,32 @@ const SubmitButton = styled(motion.button)`
 `;
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+
+    e.target.reset();
+  };
   return (
     <ContactSection
       initial={{ opacity: 0 }}
@@ -88,20 +116,20 @@ const ContactForm = () => {
     >
       <ContactTitle>Get in Touch</ContactTitle>
       <SocialLinks>
-        <SocialIcon href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+        <SocialIcon href="https://github.com/edielam" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
           <FaGithub />
         </SocialIcon>
-        <SocialIcon href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+        <SocialIcon href="https://www.linkedin.com/in/edward-lampoh-a91338b0/" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
           <FaLinkedin />
         </SocialIcon>
-        <SocialIcon href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
-          <FaTwitter />
+        <SocialIcon href="https://x.com/edie_I_AM" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+          <FaXTwitter />
         </SocialIcon>
       </SocialLinks>
-      <Form>
-        <Input type="text" placeholder="Name" required />
-        <Input type="email" placeholder="Email" required />
-        <TextArea placeholder="Message" required />
+      <Form onSubmit={handleSubmit}>
+        <Input type="text" placeholder="Name" required onChange={handleChange} />
+        <Input type="email" placeholder="Email" required onChange={handleChange} />
+        <TextArea placeholder="Message" required onChange={handleChange} />
         <SubmitButton
           type="submit"
           whileHover={{ scale: 1.05 }}
@@ -109,7 +137,7 @@ const ContactForm = () => {
         >
           Send Message
         </SubmitButton>
-      </Form>
+      </Form >
     </ContactSection>
   );
 };
