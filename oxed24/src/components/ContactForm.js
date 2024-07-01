@@ -7,6 +7,10 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 
+const userID = process.env.REACT_APP_USER_ID;
+const serviceID = process.env.REACT_APP_SERVICE_ID;
+const templateID = process.env.REACT_APP_TEMPLATE_ID;
+
 const ContactSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
@@ -98,15 +102,23 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+    emailjs.send(serviceID, templateID, {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    }, userID)
       .then((result) => {
         console.log(result.text);
+        // Handle success (e.g., show a success message)
       }, (error) => {
         console.log(error.text);
+        // Handle error (e.g., show an error message)
       });
 
-    e.target.reset();
+    // Reset form after sending
+    setFormData({ name: '', email: '', message: '' });
   };
+
   return (
     <ContactSection
       initial={{ opacity: 0 }}
@@ -127,9 +139,9 @@ const ContactForm = () => {
         </SocialIcon>
       </SocialLinks>
       <Form onSubmit={handleSubmit}>
-        <Input type="text" placeholder="Name" required onChange={handleChange} />
-        <Input type="email" placeholder="Email" required onChange={handleChange} />
-        <TextArea placeholder="Message" required onChange={handleChange} />
+        <Input type="text" name="name" placeholder="Name" required onChange={handleChange} value={formData.name} />
+        <Input type="email" name="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
+        <TextArea name="message" placeholder="Message" required onChange={handleChange} value={formData.message} />
         <SubmitButton
           type="submit"
           whileHover={{ scale: 1.05 }}
@@ -137,7 +149,7 @@ const ContactForm = () => {
         >
           Send Message
         </SubmitButton>
-      </Form >
+      </Form>
     </ContactSection>
   );
 };

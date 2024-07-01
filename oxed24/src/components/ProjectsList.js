@@ -13,9 +13,10 @@ const ProjectsSection = styled(motion.section)`
   padding: 2rem;
 `;
 const ProjectContainer = styled.div`
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(0, 255, 255, 0.4);
   border-radius: 10px;
   padding: 2rem;
+  width: 90%;
 `;
 
 const ProjectsTitle = styled.h2`
@@ -130,21 +131,21 @@ const ProjectsList = () => {
       title: "CortexCode",
       description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
-      link: "https://github.com/yourusername/cortexcode",
+      link: "https://github.com/username/cortexcode",
       skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'WebRTC', 'P2P Networking', 'Cross-platform Development', 'Real-time Collaboration', 'Docker Swarm', 'Distributed Systems']
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image: "/images/oxterm.jpg",
-      link: "https://github.com/yourusername/oxterm",
+      link: "https://github.com/username/oxterm",
       skills: ['Rust', 'Systems Programming', 'Terminal Emulation', 'ANSI Escape Codes', 'Unicode Handling', 'Input/Output Streams', 'Cross-platform Development']
     },
     {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
       image: "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
-      link: "https://github.com/yourusername/jeflix",
+      link: "https://github.com/edielam/Jeflix",
       skills: ['JavaScript', 'React', 'Node.js', 'Express.js', 'MongoDB', 'RESTful API', 'JWT Authentication', 'Responsive Design', 'State Management (Redux/Context)']
     },
     {
@@ -158,14 +159,14 @@ const ProjectsList = () => {
       title: "Savage Rampage",
       description: "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
       image: "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
-      link: "https://github.com/username/savage-rampage",
+      link: "https://github.com/edielam/Savage-Rampage",
       skills: ['Unity Engine', 'C#', '2D Game Development', 'Physics Simulation', 'Sprite Animation', 'Game Design', 'Object-Oriented Programming']
     },
     {
       title: "My Space",
       description: "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
       image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.gif?raw=true",
-      link: "https://domain.com",
+      link: "https://github.com/edielam/about_me/tree/master/oxed24",
       skills: ['React', 'Three.js', 'JavaScript', 'Responsive Design', '3D Graphics', 'Web Animation']
     },
   ];
