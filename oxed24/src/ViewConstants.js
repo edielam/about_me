@@ -18,6 +18,22 @@ export const Sidebar = styled.nav`
   align-items: center;
   justify-content: center;
 `;
+export const PhotoContainer = styled.div`
+  margin-top: 5rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #0ff;
+  top: 0;
+  position: absolute;
+`;
+
+export const Photo = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
 export const NavItem = styled(motion.button)`
   background: none;

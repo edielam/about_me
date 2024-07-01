@@ -7,7 +7,7 @@ import About from './components/About';
 import ProjectsList from './components/ProjectsList';
 import ContactForm from './components/ContactForm';
 // import BlogList from './components/BlogList';
-import { AppContainer, Sidebar, NavItem, BackSea, ContentArea, SectionWrapper, pageVariants, pageTransition } from './ViewConstants';
+import { AppContainer, Sidebar, NavItem, BackSea, ContentArea, SectionWrapper, pageVariants, pageTransition, PhotoContainer, Photo } from './ViewConstants';
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -64,6 +64,9 @@ const App = () => {
   return (
     <AppContainer>
       <Sidebar>
+        <PhotoContainer>
+          <Photo src="https://github.com/edielam/about_me/blob/master/oxed24/src/images/b4.PNG?raw=true" alt="Your Name" />
+        </PhotoContainer>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('hero')}>Home</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('about')}>About</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('projects')}>Projects</NavItem>
