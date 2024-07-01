@@ -126,28 +126,28 @@ const ProjectsList = () => {
       description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
       link: "https://github.com/yourusername/cortexcode",
-      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
+      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'WebRTC', 'P2P Networking', 'Cross-platform Development', 'Real-time Collaboration', 'Docker Swarm', 'Distributed Systems']
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image: "/images/oxterm.jpg",
       link: "https://github.com/yourusername/oxterm",
-      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
+      skills: ['Rust', 'Systems Programming', 'Terminal Emulation', 'ANSI Escape Codes', 'Unicode Handling', 'Input/Output Streams', 'Cross-platform Development']
     },
     {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
       image: "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
       link: "https://github.com/yourusername/jeflix",
-      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
+      skills: ['JavaScript', 'React', 'Node.js', 'Express.js', 'MongoDB', 'RESTful API', 'JWT Authentication', 'Responsive Design', 'State Management (Redux/Context)']
     },
     {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image: "/images/tcp.jpg",
       link: "https://github.com/yourusername/tcp-from-scratch",
-      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'Cross-platform Development', 'Network Programming', 'Docker Swarm']
+      skills: ['Rust', 'Network Programming', 'TCP/IP Protocol', 'Socket Programming', 'Packet Handling', 'Error Handling', 'Flow Control', 'Congestion Control']
     },
   ];
 
