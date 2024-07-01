@@ -113,4 +113,5 @@ export const Skill = styled(motion.span)`
   border-radius: 15px;
   display: inline-block;
   font-size: 0.8rem;
+  font-weight: bold;
 `;

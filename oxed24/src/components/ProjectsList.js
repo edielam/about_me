@@ -75,6 +75,9 @@ const ProjectLink = styled.a`
   border: 1px solid #0ff;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  position: absolute;
+  right: 5rem;
+  bottom: 1rem;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -101,6 +104,7 @@ const ModalContent = styled(motion.div)`
   border-radius: 10px;
   max-width: 600px;
   width: 90%;
+  position: relative;
 `;
 
 const CloseButton = styled.button`
