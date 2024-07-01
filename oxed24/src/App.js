@@ -1,66 +1,13 @@
 // src/App.js
 import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 import Hero from './components/Hero';
 import About from './components/About';
 import ProjectsList from './components/ProjectsList';
 import ContactForm from './components/ContactForm';
 import BlogList from './components/BlogList';
-
-const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: 100vh;
-  background: #0e2a47;
-  color: #cfcfcf;
-`;
-
-const Sidebar = styled.nav`
-  background: #0a1f35;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const NavItem = styled(motion.button)`
-  background: none;
-  border: none;
-  color: #0ff;
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  cursor: pointer;
-  &:hover {
-    color: #0f0;
-  }
-`;
-const BackSea = styled(motion.section)`
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  position: absolute;
-`;
-
-const ContentArea = styled(motion.main)`
-  position: relative;
-  overflow-y: auto;
-  padding: 0rem;
-  z-index: 1;
-`;
-
-const SectionWrapper = styled(motion.div)`
-  position: relative;
-  z-index: 1;
-`;
+import { AppContainer, Sidebar, NavItem, BackSea, ContentArea, SectionWrapper, pageVariants, pageTransition } from './ViewConstants';
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -130,26 +77,54 @@ const App = () => {
         <AnimatePresence mode="wait">
           {currentSection === 'hero' && <Hero key="hero" />}
           {currentSection === 'about' && (
-            <SectionWrapper key="about">
+            <SectionWrapper
+              key="about"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
               <About />
             </SectionWrapper>
           )}
           {currentSection === 'projects' && (
-            <SectionWrapper key="projects">
+            <SectionWrapper
+              key="projects"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
               <ProjectsList />
             </SectionWrapper>
           )}
           {currentSection === 'contact' && (
-            <SectionWrapper key="contact">
+            <SectionWrapper
+              key="contact"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
               <ContactForm />
             </SectionWrapper>
           )}
           {currentSection === 'blog' && (
-            <SectionWrapper key="blog">
+            <SectionWrapper
+              key="blog"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
               <BlogList />
             </SectionWrapper>
           )}
-        </AnimatePresence>
+        </AnimatePresence >
       </ContentArea>
     </AppContainer>
   );
