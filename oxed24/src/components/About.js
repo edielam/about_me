@@ -23,10 +23,14 @@ const AboutContent = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 800px;
+  background: rgba(0, 100, 100, 0.5);
+  padding: 2rem 2rem;
+  border-radius: 20px;
 `;
 
 const AboutText = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 550;
   line-height: 1.6;
   color: #e0e0e0;
   margin-bottom: 2rem;

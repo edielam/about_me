@@ -52,7 +52,7 @@ export const BackSea = styled(motion.section)`
   left: 25%;
   width: 80%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   overflow: hidden;
   top: 0;
   z-index: 0;

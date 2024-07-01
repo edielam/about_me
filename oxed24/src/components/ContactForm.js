@@ -17,7 +17,16 @@ const ContactSection = styled(motion.section)`
   align-items: center;
   height: 100%;
 `;
-
+const ContactContaner = styled(motion.section)`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: rgba(0, 50, 100, 0.5);
+   padding: 2rem 2rem;
+   width: 50%;
+   margin-top: 3rem;
+   border-radius: 20px;
+  `;
 const ContactTitle = styled.h2`
   font-size: 2.5rem;
   color: #0ff;
@@ -47,7 +56,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(0, 200, 200, 0.3);
   border: 1px solid #0ff;
   border-radius: 5px;
   padding: 0.5rem;
@@ -60,7 +69,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(0, 200, 200, 0.3);
   border: 1px solid #0ff;
   border-radius: 5px;
   padding: 0.5rem;
@@ -126,30 +135,32 @@ const ContactForm = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <ContactTitle>Get in Touch</ContactTitle>
-      <SocialLinks>
-        <SocialIcon href="https://github.com/edielam" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
-          <FaGithub />
-        </SocialIcon>
-        <SocialIcon href="https://www.linkedin.com/in/edward-lampoh-a91338b0/" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
-          <FaLinkedin />
-        </SocialIcon>
-        <SocialIcon href="https://x.com/edie_I_AM" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
-          <FaXTwitter />
-        </SocialIcon>
-      </SocialLinks>
-      <Form onSubmit={handleSubmit}>
-        <Input type="text" name="name" placeholder="Name" required onChange={handleChange} value={formData.name} />
-        <Input type="email" name="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
-        <TextArea name="message" placeholder="Message" required onChange={handleChange} value={formData.message} />
-        <SubmitButton
-          type="submit"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Send Message
-        </SubmitButton>
-      </Form>
+      <ContactContaner>
+        <ContactTitle>Get in Touch</ContactTitle>
+        <SocialLinks>
+          <SocialIcon href="https://github.com/edielam" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+            <FaGithub />
+          </SocialIcon>
+          <SocialIcon href="https://www.linkedin.com/in/edward-lampoh-a91338b0/" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+            <FaLinkedin />
+          </SocialIcon>
+          <SocialIcon href="https://x.com/edie_I_AM" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+            <FaXTwitter />
+          </SocialIcon>
+        </SocialLinks>
+        <Form onSubmit={handleSubmit}>
+          <Input type="text" name="name" placeholder="Name" required onChange={handleChange} value={formData.name} />
+          <Input type="email" name="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
+          <TextArea name="message" placeholder="Message" required onChange={handleChange} value={formData.message} />
+          <SubmitButton
+            type="submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Message
+          </SubmitButton>
+        </Form>
+      </ContactContaner>
     </ContactSection>
   );
 };
