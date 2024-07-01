@@ -71,7 +71,7 @@ const About = () => {
           <br /><br />
           At the heart of my software engineering journey is a desire to make a positive impact on people's lives. Whether it's solving real-world problems, optimizing performance, or ensuring code quality, my goal is to create meaningful solutions while having fun along the way. And as a firm believer in the power of knowledge-sharing, I continue to contribute to the wider developer community through my technical blog, where I share insights, lessons learned, and best practices from my experiences.
         </AboutText>
-        <ResumeLink href="/path/to/your/resume.pdf" target="_blank">View My Resume</ResumeLink>
+        <ResumeLink href="resume.pdf" target="_blank">View My Resume</ResumeLink>
       </AboutContent>
     </AboutSection>
   );
