@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import ProjectsList from './components/ProjectsList';
 import ContactForm from './components/ContactForm';
-import BlogList from './components/BlogList';
+// import BlogList from './components/BlogList';
 import { AppContainer, Sidebar, NavItem, BackSea, ContentArea, SectionWrapper, pageVariants, pageTransition } from './ViewConstants';
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('about')}>About</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('projects')}>Projects</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('contact')}>Contact</NavItem>
-        <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('blog')}>Blog</NavItem>
+        {/* <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('blog')}>Blog</NavItem> */}
       </Sidebar>
       <ContentArea>
         <BackSea>
@@ -123,7 +123,7 @@ const App = () => {
               <ContactForm />
             </SectionWrapper>
           )}
-          {currentSection === 'blog' && (
+          {/* {currentSection === 'blog' && (
             <SectionWrapper
               key="blog"
               initial="initial"
@@ -134,7 +134,7 @@ const App = () => {
             >
               <BlogList />
             </SectionWrapper>
-          )}
+          )} */}
         </AnimatePresence >
       </ContentArea>
     </AppContainer>
