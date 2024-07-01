@@ -39,7 +39,7 @@ const NavItem = styled(motion.button)`
 
 const ContentArea = styled(motion.main)`
   overflow-y: auto;
-  padding: 2rem;
+  padding: 0rem;
 `;
 
 const App = () => {
