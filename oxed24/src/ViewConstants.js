@@ -57,18 +57,16 @@ export const SectionWrapper = styled(motion.div)`
 `;
 export const pageVariants = {
   initial: {
-    opacity: 0
+    opacity: 0,
   },
   in: {
-    opacity: 1
+    opacity: 1,
   },
   out: {
-    opacity: 0
+    opacity: 0,
   }
 };
 
 export const pageTransition = {
-  type: "tween",
-  ease: "anticipate",
-  duration: 0.5
+  duration: 2.0,
 };
