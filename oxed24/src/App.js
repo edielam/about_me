@@ -65,7 +65,7 @@ const App = () => {
     <AppContainer>
       <Sidebar>
         <PhotoContainer>
-          <Photo src="https://github.com/edielam/about_me/blob/master/oxed24/src/images/b4.PNG?raw=true" alt="Your Name" />
+          <Photo src="https://github.com/edielam/about_me/blob/master/oxed24/src/assets/b5.png?raw=true" alt="Eddy" />
         </PhotoContainer>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('hero')}>Home</NavItem>
         <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('about')}>About</NavItem>
