@@ -131,14 +131,14 @@ const ProjectsList = () => {
       title: "CortexCode",
       description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
-      link: "https://github.com/username/cortexcode",
+      link: "https://github.com/edielam/cortexcode",
       skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'WebRTC', 'P2P Networking', 'Cross-platform Development', 'Real-time Collaboration', 'Docker Swarm', 'Distributed Systems']
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image: "/images/oxterm.jpg",
-      link: "https://github.com/username/oxterm",
+      link: "https://github.com/edielam/oxterm",
       skills: ['Rust', 'Systems Programming', 'Terminal Emulation', 'ANSI Escape Codes', 'Unicode Handling', 'Input/Output Streams', 'Cross-platform Development']
     },
     {
@@ -152,7 +152,7 @@ const ProjectsList = () => {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image: "/images/tcp.jpg",
-      link: "https://github.com/username/tcp-from-scratch",
+      link: "https://github.com/edielam/tcp-from-scratch",
       skills: ['Rust', 'Network Programming', 'TCP/IP Protocol', 'Socket Programming', 'Packet Handling', 'Error Handling', 'Flow Control', 'Congestion Control']
     },
     {
