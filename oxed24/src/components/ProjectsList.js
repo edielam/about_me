@@ -12,6 +12,11 @@ const ProjectsSection = styled(motion.section)`
   z-index: 1;
   padding: 2rem;
 `;
+const ProjectContainer = styled.div`
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+`;
 
 const ProjectsTitle = styled.h2`
   font-size: 2.5rem;
@@ -159,7 +164,7 @@ const ProjectsList = () => {
     {
       title: "My Space",
       description: "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
-      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.png?raw=true",
+      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.gif?raw=true",
       link: "https://domain.com",
       skills: ['React', 'Three.js', 'JavaScript', 'Responsive Design', '3D Graphics', 'Web Animation']
     },
@@ -173,29 +178,30 @@ const ProjectsList = () => {
       transition={{ duration: 0.5 }}
     >
       <ProjectsTitle>Projects</ProjectsTitle>
-      <ProjectsGrid>
-        {projects.map((project, index) => (
-          <ProjectItem
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setSelectedProject(project)}
-          >
-            <ProjectImage src={project.image} alt={project.title} />
-            <ProjectOverlay
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
+      <ProjectContainer>
+        <ProjectsGrid>
+          {projects.map((project, index) => (
+            <ProjectItem
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedProject(project)}
             >
-              <ProjectTitle>{project.title}</ProjectTitle>
-              {/* <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
+              <ProjectImage src={project.image} alt={project.title} />
+              <ProjectOverlay
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectTitle>{project.title}</ProjectTitle>
+                {/* <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
                 View Project
               </ProjectLink> */}
-            </ProjectOverlay>
-          </ProjectItem>
-        ))}
-      </ProjectsGrid>
-
+              </ProjectOverlay>
+            </ProjectItem>
+          ))}
+        </ProjectsGrid>
+      </ProjectContainer>
       <AnimatePresence>
         {selectedProject && (
           <ProjectModal
