@@ -149,6 +149,13 @@ const ProjectsList = () => {
       link: "https://github.com/yourusername/tcp-from-scratch",
       skills: ['Rust', 'Network Programming', 'TCP/IP Protocol', 'Socket Programming', 'Packet Handling', 'Error Handling', 'Flow Control', 'Congestion Control']
     },
+    {
+      title: "Savage Rampage",
+      description: "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
+      image: "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
+      link: "https://github.com/yourusername/savage-rampage",
+      skills: ['Unity Engine', 'C#', '2D Game Development', 'Physics Simulation', 'Sprite Animation', 'Game Design', 'Object-Oriented Programming']
+    }
   ];
 
   return (
