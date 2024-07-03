@@ -41,8 +41,8 @@ const ProjectsGrid = styled.div`
 
 const ProjectItem = styled(motion.div)`
   position: relative;
-  height: 250px;
-  width: 100%; // Ensure it takes the full width of its container
+  aspect-ratio: 16 / 9;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
