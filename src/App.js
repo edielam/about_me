@@ -101,7 +101,7 @@ const App = () => {
       <Sidebar isOpen={isMenuOpen}>
         <PhotoContainer>
           <Photo
-            src="https://github.com/edielam/about_me/blob/master/oxed24/src/assets/b5.png?raw=true"
+            src="https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
             alt="Eddy"
           />
         </PhotoContainer>

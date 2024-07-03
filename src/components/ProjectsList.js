@@ -142,7 +142,7 @@ const ProjectsList = () => {
       description:
         "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image:
-        "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
+        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/prgs1.png",
       link: "https://github.com/edielam/cortexcode",
       skills: [
         "Rust",
@@ -161,7 +161,7 @@ const ProjectsList = () => {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image:
-        "https://github.com/edielam/about_me/blob/portfolio/src/assets/term.png?raw=true",
+        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/term.png",
       link: "https://github.com/edielam/oxterm",
       skills: [
         "Rust",
@@ -177,7 +177,7 @@ const ProjectsList = () => {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
       image:
-        "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
+        "https://raw.githubusercontent.com/edielam/Jeflix/production/imgs/jeflix1.png",
       link: "https://github.com/edielam/Jeflix",
       skills: [
         "JavaScript",
@@ -195,7 +195,7 @@ const ProjectsList = () => {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image:
-        "https://github.com/edielam/about_me/blob/portfolio/src/assets/tcp.jpg?raw=true",
+        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/tcp.jpg",
       link: "https://github.com/edielam/tcp-from-scratch",
       skills: [
         "Rust",
@@ -213,7 +213,7 @@ const ProjectsList = () => {
       description:
         "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
       image:
-        "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
+        "https://raw.githubusercontent.com/edielam/Savage-Rampage/main/screenshots/r1.png",
       link: "https://github.com/edielam/Savage-Rampage",
       skills: [
         "Unity Engine",
@@ -230,7 +230,7 @@ const ProjectsList = () => {
       description:
         "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
       image:
-        "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.gif?raw=true",
+        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/pf.gif",
       link: "https://github.com/edielam/about_me/tree/master/oxed24",
       skills: [
         "React",
