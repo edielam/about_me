@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const AppContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 250px 1fr;
   height: 100vh;
   background: #0e2a47;
   color: #cfcfcf;
@@ -16,23 +16,21 @@ export const AppContainer = styled.div`
 export const Sidebar = styled.nav`
   background: #0a1f35;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 250px;
   z-index: 10;
+  transition: transform 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0.5rem;
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateX(0)" : "translateX(-100%)"};
   }
 `;
 export const PhotoContainer = styled.div`
@@ -44,7 +42,22 @@ export const PhotoContainer = styled.div`
   overflow: hidden;
   border: 3px solid #0ff;
 `;
+export const MenuButton = styled.button`
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+  background: none;
+  border: none;
+  color: #0ff;
+  font-size: 1.5rem;
+  cursor: pointer;
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 export const Photo = styled.img`
   width: 100%;
   height: 100%;
@@ -65,7 +78,7 @@ export const NavItem = styled(motion.button)`
 
 export const BackSea = styled(motion.section)`
   position: fixed;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   background: rgba(30, 30, 30, 0.8);
   overflow: hidden;
@@ -79,7 +92,6 @@ export const ContentArea = styled(motion.main)`
   overflow-y: auto;
   padding: 0;
   z-index: 1;
-  height: 100vh;
   width: 100%;
 `;
 
