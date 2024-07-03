@@ -1,8 +1,8 @@
 // src/components/ProjectsList.js
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Skill, SkillsContainer } from '../ViewConstants';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import { Skill, SkillsContainer } from "../ViewConstants";
 
 const ProjectsSection = styled(motion.section)`
   display: flex;
@@ -129,45 +129,105 @@ const ProjectsList = () => {
   const projects = [
     {
       title: "CortexCode",
-      description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
-      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
+      description:
+        "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
+      image:
+        "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/prgs1.png?raw=true",
       link: "https://github.com/edielam/cortexcode",
-      skills: ['Rust', 'JavaScript', 'Tauri', 'React', 'WebRTC', 'P2P Networking', 'Cross-platform Development', 'Real-time Collaboration', 'Docker Swarm', 'Distributed Systems']
+      skills: [
+        "Rust",
+        "JavaScript",
+        "Tauri",
+        "React",
+        "WebRTC",
+        "P2P Networking",
+        "Cross-platform Development",
+        "Real-time Collaboration",
+        "Docker Swarm",
+        "Distributed Systems",
+      ],
     },
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
       image: "/images/oxterm.jpg",
       link: "https://github.com/edielam/oxterm",
-      skills: ['Rust', 'Systems Programming', 'Terminal Emulation', 'ANSI Escape Codes', 'Unicode Handling', 'Input/Output Streams', 'Cross-platform Development']
+      skills: [
+        "Rust",
+        "Systems Programming",
+        "Terminal Emulation",
+        "ANSI Escape Codes",
+        "Unicode Handling",
+        "Input/Output Streams",
+        "Cross-platform Development",
+      ],
     },
     {
       title: "Jeflix",
       description: "A MERN stack clone of Netflix.",
-      image: "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
+      image:
+        "https://github.com/edielam/Jeflix/raw/production/imgs/jeflix1.png?raw=true",
       link: "https://github.com/edielam/Jeflix",
-      skills: ['JavaScript', 'React', 'Node.js', 'Express.js', 'MongoDB', 'RESTful API', 'JWT Authentication', 'Responsive Design', 'State Management (Redux/Context)']
+      skills: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "RESTful API",
+        "JWT Authentication",
+        "Responsive Design",
+        "State Management (Redux/Context)",
+      ],
     },
     {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
       image: "/images/tcp.jpg",
       link: "https://github.com/edielam/tcp-from-scratch",
-      skills: ['Rust', 'Network Programming', 'TCP/IP Protocol', 'Socket Programming', 'Packet Handling', 'Error Handling', 'Flow Control', 'Congestion Control']
+      skills: [
+        "Rust",
+        "Network Programming",
+        "TCP/IP Protocol",
+        "Socket Programming",
+        "Packet Handling",
+        "Error Handling",
+        "Flow Control",
+        "Congestion Control",
+      ],
     },
     {
       title: "Savage Rampage",
-      description: "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
-      image: "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
+      description:
+        "A simple 2D game built with Unity and C# where zombies chase the player character. The objective of the game is to jump over the zombies to avoid getting caught.",
+      image:
+        "https://github.com/edielam/Savage-Rampage/raw/main/screenshots/r1.png?raw=true",
       link: "https://github.com/edielam/Savage-Rampage",
-      skills: ['Unity Engine', 'C#', '2D Game Development', 'Physics Simulation', 'Sprite Animation', 'Game Design', 'Object-Oriented Programming']
+      skills: [
+        "Unity Engine",
+        "C#",
+        "2D Game Development",
+        "Physics Simulation",
+        "Sprite Animation",
+        "Game Design",
+        "Object-Oriented Programming",
+      ],
     },
     {
       title: "My Space",
-      description: "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
-      image: "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.gif?raw=true",
+      description:
+        "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
+      image:
+        "https://github.com/edielam/about_me/blob/master/oxed24/src/assets/pf.gif?raw=true",
       link: "https://github.com/edielam/about_me/tree/master/oxed24",
-      skills: ['React', 'Three.js', 'JavaScript', 'Responsive Design', '3D Graphics', 'Web Animation']
+      skills: [
+        "React",
+        "Three.js",
+        "JavaScript",
+        "Responsive Design",
+        "3D Graphics",
+        "Web Animation",
+      ],
     },
   ];
 
@@ -217,9 +277,13 @@ const ProjectsList = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
             >
-              <CloseButton onClick={() => setSelectedProject(null)}>&times;</CloseButton>
+              <CloseButton onClick={() => setSelectedProject(null)}>
+                &times;
+              </CloseButton>
               <ProjectTitle>{selectedProject.title}</ProjectTitle>
-              <ProjectDescription>{selectedProject.description}</ProjectDescription>
+              <ProjectDescription>
+                {selectedProject.description}
+              </ProjectDescription>
               <SkillsContainer>
                 {selectedProject.skills.map((skill, index) => (
                   <Skill key={index} whileHover={{ scale: 1.1 }}>
@@ -227,7 +291,11 @@ const ProjectsList = () => {
                   </Skill>
                 ))}
               </SkillsContainer>
-              <ProjectLink href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+              <ProjectLink
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Project
               </ProjectLink>
             </ModalContent>

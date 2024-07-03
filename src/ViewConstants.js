@@ -17,7 +17,6 @@ export const Sidebar = styled.nav`
   align-items: center;
   justify-content: center;
   width: 20vw;
-  height: 100%;
 `;
 export const PhotoContainer = styled.div`
   margin-top: 5rem;
@@ -71,7 +70,7 @@ export const ContentArea = styled(motion.main)`
 export const SectionWrapper = styled(motion.div)`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
 `;
 
