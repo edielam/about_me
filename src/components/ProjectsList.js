@@ -153,7 +153,8 @@ const ProjectsList = () => {
     {
       title: "Oxterm",
       description: "A basic terminal emulator built from scratch using Rust.",
-      image: "/images/oxterm.jpg",
+      image:
+        "https://github.com/edielam/about_me/blob/portfolio/src/assets/term.png?raw=true",
       link: "https://github.com/edielam/oxterm",
       skills: [
         "Rust",
@@ -186,7 +187,8 @@ const ProjectsList = () => {
     {
       title: "TCP from Scratch",
       description: "Implemented TCP from scratch in Rust.",
-      image: "/images/tcp.jpg",
+      image:
+        "https://github.com/edielam/about_me/blob/portfolio/src/assets/tcp.jpg?raw=true",
       link: "https://github.com/edielam/tcp-from-scratch",
       skills: [
         "Rust",
