@@ -11,8 +11,9 @@ export const AppContainer = styled.div`
 
 export const Sidebar = styled.nav`
   background: #0a1f35;
-  padding: 2rem;
   display: flex;
+  height: 100vh;
+  padding: 0 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -20,14 +21,13 @@ export const Sidebar = styled.nav`
   z-index: 1;
 `;
 export const PhotoContainer = styled.div`
-  margin-top: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #0ff;
-  top: 0;
-  position: absolute;
 `;
 
 export const Photo = styled.img`

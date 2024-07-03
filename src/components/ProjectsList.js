@@ -16,7 +16,7 @@ const ProjectContainer = styled.div`
   background: rgba(0, 100, 100, 0.5);
   border-radius: 10px;
   padding: 2rem;
-  width: 90%;
+  width: 80%;
 `;
 
 const ProjectsTitle = styled.h2`
@@ -36,7 +36,7 @@ const ProjectsGrid = styled.div`
 const ProjectItem = styled(motion.div)`
   position: relative;
   height: 250px;
-  width: 16rem;
+  width: 95%;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;

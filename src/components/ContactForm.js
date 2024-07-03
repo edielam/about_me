@@ -1,10 +1,9 @@
-
 // src/components/ContactForm.js
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import emailjs from 'emailjs-com';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import React, { useState } from "react";
+import styled from "styled-components";
+import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const userID = process.env.REACT_APP_USER_ID;
@@ -18,15 +17,15 @@ const ContactSection = styled(motion.section)`
   height: 100%;
 `;
 const ContactContaner = styled(motion.section)`
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   background: rgba(0, 50, 100, 0.5);
-   padding: 2rem 2rem;
-   width: 50%;
-   margin-top: 3rem;
-   border-radius: 20px;
-  `;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 100, 100, 0.3);
+  padding: 2rem 2rem;
+  width: 50%;
+  margin-top: 3rem;
+  border-radius: 20px;
+`;
 const ContactTitle = styled.h2`
   font-size: 2.5rem;
   color: #0ff;
@@ -66,10 +65,10 @@ const Input = styled.input`
   &:focus {
     outline: none;
     border-color: #0f0;
-  };
+  }
   &::placeholder {
-      color: rgba(207, 207, 207, 0.7);
-    }
+    color: rgba(207, 207, 207, 0.7);
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -85,10 +84,10 @@ const TextArea = styled.textarea`
   &:focus {
     outline: none;
     border-color: #0f0;
-  };
+  }
   &::placeholder {
-      color: rgba(207, 207, 207, 0.7);
-    }
+    color: rgba(207, 207, 207, 0.7);
+  }
 `;
 
 const SubmitButton = styled(motion.button)`
@@ -103,37 +102,46 @@ const SubmitButton = styled(motion.button)`
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send(serviceID, templateID, {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message
-    }, userID)
-      .then((result) => {
-        console.log(result.text);
-        // Handle success (e.g., show a success message)
-      }, (error) => {
-        console.log(error.text);
-        // Handle error (e.g., show an error message)
-      });
+    emailjs
+      .send(
+        serviceID,
+        templateID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        userID,
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          // Handle success (e.g., show a success message)
+        },
+        (error) => {
+          console.log(error.text);
+          // Handle error (e.g., show an error message)
+        },
+      );
 
     // Reset form after sending
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -146,20 +154,55 @@ const ContactForm = () => {
       <ContactContaner>
         <ContactTitle>Get in Touch</ContactTitle>
         <SocialLinks>
-          <SocialIcon href="https://github.com/edielam" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+          <SocialIcon
+            href="https://github.com/edielam"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5 }}
+          >
             <FaGithub />
           </SocialIcon>
-          <SocialIcon href="https://www.linkedin.com/in/edward-lampoh-a91338b0/" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+          <SocialIcon
+            href="https://www.linkedin.com/in/edward-lampoh-a91338b0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5 }}
+          >
             <FaLinkedin />
           </SocialIcon>
-          <SocialIcon href="https://x.com/edie_I_AM" target="_blank" rel="noopener noreferrer" whileHover={{ y: -5 }}>
+          <SocialIcon
+            href="https://x.com/edie_I_AM"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -5 }}
+          >
             <FaXTwitter />
           </SocialIcon>
         </SocialLinks>
         <Form onSubmit={handleSubmit}>
-          <Input type="text" name="name" placeholder="Name" required onChange={handleChange} value={formData.name} />
-          <Input type="email" name="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
-          <TextArea name="message" placeholder="Message" required onChange={handleChange} value={formData.message} />
+          <Input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            onChange={handleChange}
+            value={formData.name}
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            onChange={handleChange}
+            value={formData.email}
+          />
+          <TextArea
+            name="message"
+            placeholder="Message"
+            required
+            onChange={handleChange}
+            value={formData.message}
+          />
           <SubmitButton
             type="submit"
             whileHover={{ scale: 1.05 }}
