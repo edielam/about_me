@@ -1,4 +1,3 @@
-// src/components/ProjectsList.js
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,7 +11,9 @@ const ProjectsSection = styled(motion.section)`
   z-index: 1;
   padding: 2rem;
   background: rgba(0, 0, 20, 0.85);
+  overflow: hidden;
 `;
+
 const ProjectContainer = styled.div`
   background: rgba(0, 100, 100, 0.3);
   border-radius: 10px;
@@ -37,7 +38,7 @@ const ProjectsGrid = styled.div`
 const ProjectItem = styled(motion.div)`
   position: relative;
   height: 250px;
-  width: 95%;
+  width: 100%; // Ensure it takes the full width of its container
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -52,7 +53,6 @@ const ProjectImage = styled.img`
 
 const ProjectOverlay = styled(motion.div)`
   position: absolute;
-
   top: 0;
   left: 0;
   right: 0;
@@ -112,7 +112,7 @@ const ModalContent = styled(motion.div)`
   padding: 2rem;
   border-radius: 10px;
   max-width: 600px;
-  width: 70%;
+  width: 90%;
   position: relative;
 `;
 
@@ -260,9 +260,6 @@ const ProjectsList = () => {
                 transition={{ duration: 0.3 }}
               >
                 <ProjectTitle>{project.title}</ProjectTitle>
-                {/* <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">
-                View Project
-              </ProjectLink> */}
               </ProjectOverlay>
             </ProjectItem>
           ))}

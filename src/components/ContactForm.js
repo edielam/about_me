@@ -13,9 +13,10 @@ const templateID = process.env.REACT_APP_TEMPLATE_ID;
 const ContactSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
+  padding: 2rem 2rem;
+  text-align: center;
   background: rgba(0, 0, 20, 0.85);
 `;
 const ContactContaner = styled(motion.section)`
