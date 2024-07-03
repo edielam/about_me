@@ -33,6 +33,10 @@ const ProjectsGrid = styled.div`
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ProjectItem = styled(motion.div)`
@@ -105,6 +109,8 @@ const ProjectModal = styled(motion.div)`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
+  padding: 2rem;
 `;
 
 const ModalContent = styled(motion.div)`
@@ -114,6 +120,7 @@ const ModalContent = styled(motion.div)`
   max-width: 600px;
   width: 90%;
   position: relative;
+  margin: auto;
 `;
 
 const CloseButton = styled.button`

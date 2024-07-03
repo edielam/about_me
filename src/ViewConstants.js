@@ -7,18 +7,33 @@ export const AppContainer = styled.div`
   height: 100vh;
   background: #0e2a47;
   color: #cfcfcf;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Sidebar = styled.nav`
   background: #0a1f35;
   display: flex;
   height: 100vh;
-  padding: 0 2rem;
+  padding: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 20vw;
-  z-index: 1;
+  width: 100%;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
 `;
 export const PhotoContainer = styled.div`
   margin-top: 3rem;
