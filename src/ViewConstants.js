@@ -1,6 +1,5 @@
-
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const AppContainer = styled.div`
   display: grid;
@@ -20,8 +19,8 @@ export const Sidebar = styled.nav`
 `;
 export const PhotoContainer = styled.div`
   margin-top: 5rem;
-  width: 150px;
-  height: 150px;
+  width: 8%;
+  height: 15%;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #0ff;
