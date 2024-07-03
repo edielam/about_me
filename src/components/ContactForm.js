@@ -42,7 +42,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialIcon = styled(motion.a)`
-  color: #0ff;
+  color: #0b3;
   font-size: 2rem;
   margin: 0 1rem;
   &:hover {

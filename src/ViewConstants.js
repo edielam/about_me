@@ -50,9 +50,12 @@ export const MenuButton = styled.button`
   z-index: 20;
   background: none;
   border: none;
-  color: #0ff;
-  font-size: 1.5rem;
+  color: #0b3;
+  font-size: 2rem;
   cursor: pointer;
+  &:hover {
+    color: #0f0;
+  }
 
   @media (max-width: 768px) {
     display: block;

@@ -6,6 +6,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import ProjectsList from "./components/ProjectsList";
 import ContactForm from "./components/ContactForm";
+import { MdOutlineMenuBook } from "react-icons/md";
+
 // import BlogList from './components/BlogList';
 import {
   AppContainer,
@@ -93,7 +95,9 @@ const App = () => {
 
   return (
     <AppContainer>
-      <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</MenuButton>
+      <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <MdOutlineMenuBook />
+      </MenuButton>
       <Sidebar isOpen={isMenuOpen}>
         <PhotoContainer>
           <Photo
