@@ -7,9 +7,10 @@ const AboutSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  padding: 2rem;
+  min-height: 100vh;
+  padding: 2rem 2rem 4rem; // Adding extra padding at the bottom
   text-align: center;
+  background: rgba(0, 0, 20, 0.85);
 `;
 
 const AboutTitle = styled.h2`

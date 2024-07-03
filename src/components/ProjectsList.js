@@ -8,12 +8,13 @@ const ProjectsSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
   z-index: 1;
   padding: 2rem;
+  background: rgba(0, 0, 20, 0.85);
 `;
 const ProjectContainer = styled.div`
-  background: rgba(0, 100, 100, 0.5);
+  background: rgba(0, 100, 100, 0.3);
   border-radius: 10px;
   padding: 2rem;
   width: 80%;

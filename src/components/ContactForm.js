@@ -13,8 +13,10 @@ const templateID = process.env.REACT_APP_TEMPLATE_ID;
 const ContactSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100%;
+  background: rgba(0, 0, 20, 0.85);
 `;
 const ContactContaner = styled(motion.section)`
   display: flex;
@@ -151,8 +153,8 @@ const ContactForm = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <ContactTitle>Get in Touch</ContactTitle>
       <ContactContaner>
-        <ContactTitle>Get in Touch</ContactTitle>
         <SocialLinks>
           <SocialIcon
             href="https://github.com/edielam"
