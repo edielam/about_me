@@ -36,6 +36,7 @@ const ProjectsGrid = styled.div`
 const ProjectItem = styled(motion.div)`
   position: relative;
   height: 250px;
+  width: 16rem;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -50,6 +51,7 @@ const ProjectImage = styled.img`
 
 const ProjectOverlay = styled(motion.div)`
   position: absolute;
+
   top: 0;
   left: 0;
   right: 0;
@@ -109,7 +111,7 @@ const ModalContent = styled(motion.div)`
   padding: 2rem;
   border-radius: 10px;
   max-width: 600px;
-  width: 90%;
+  width: 70%;
   position: relative;
 `;
 

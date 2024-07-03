@@ -17,6 +17,7 @@ export const Sidebar = styled.nav`
   align-items: center;
   justify-content: center;
   width: 20vw;
+  z-index: 1;
 `;
 export const PhotoContainer = styled.div`
   margin-top: 5rem;
