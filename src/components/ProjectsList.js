@@ -188,7 +188,7 @@ const ProjectsList = () => {
         "RESTful API",
         "JWT Authentication",
         "Responsive Design",
-        "State Management (Redux/Context)",
+        "Redux/Context",
       ],
     },
     {
