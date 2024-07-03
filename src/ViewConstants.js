@@ -16,11 +16,13 @@ export const Sidebar = styled.nav`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 20vw;
+  height: 100%;
 `;
 export const PhotoContainer = styled.div`
   margin-top: 5rem;
-  width: 8%;
-  height: 15%;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #0ff;
@@ -48,9 +50,8 @@ export const NavItem = styled(motion.button)`
 
 export const BackSea = styled(motion.section)`
   position: fixed;
-  left: 25%;
-  width: 80%;
-  height: 100%;
+  width: 80vw;
+  height: 100vh;
   background: rgba(30, 30, 30, 0.8);
   overflow: hidden;
   top: 0;
@@ -64,6 +65,7 @@ export const ContentArea = styled(motion.main)`
   padding: 0;
   z-index: 1;
   height: 100vh;
+  width: 100%;
 `;
 
 export const SectionWrapper = styled(motion.div)`
