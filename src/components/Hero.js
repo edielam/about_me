@@ -28,7 +28,7 @@ const TerminalWindow = styled.div`
 const TerminalPrompt = styled.div`
   color: #0ff;
   &::before {
-    content: "(0xed24):$ ";
+    content: "(0xed24):~$ ";
   }
 `;
 
