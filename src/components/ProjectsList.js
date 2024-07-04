@@ -231,7 +231,7 @@ const ProjectsList = () => {
         "My personal portfolio website showcasing my projects and skills. Built using modern web technologies and featuring 3D graphics with Three.js.",
       image:
         "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/pf.gif",
-      link: "https://github.com/edielam/about_me/tree/master/oxed24",
+      link: "https://github.com/edielam/about_me/tree/portfolio",
       skills: [
         "React",
         "Three.js",
