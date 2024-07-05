@@ -198,8 +198,7 @@ const ProjectsList = () => {
     },
     {
       title: "TCP from Scratch",
-      description:
-        "Implemented TCP from scratch in Rust. STATUS: IN PROGRESS, PRIVATE REPO",
+      description: "Implemented TCP from scratch in Rust.",
       image:
         "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/tcp.jpg",
       link: "https://github.com/edielam/tcp-from-scratch",
