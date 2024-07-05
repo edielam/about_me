@@ -97,7 +97,11 @@ const ProjectLink = styled.a`
     background-color: rgba(0, 255, 255, 0.2);
   }
 `;
-
+const ProjectStatus = styled.h3`
+  font-size: 0.9rem;
+  color: #090;
+  margin-bottom: 0.5rem;
+`;
 const ProjectModal = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -159,8 +163,7 @@ const ProjectsList = () => {
     },
     {
       title: "Oxterm",
-      description:
-        "A basic terminal emulator built from scratch using Rust. STATUS: IN PROGRESS, PRIVATE REPO",
+      description: "A basic terminal emulator built from scratch using Rust.",
       image:
         "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/term.png",
       link: "https://github.com/edielam/oxterm",
@@ -173,6 +176,7 @@ const ProjectsList = () => {
         "Input/Output Streams",
         "Cross-platform Development",
       ],
+      STATUS: "IN PROGRESS, PRIVATE REPO ...",
     },
     {
       title: "Jeflix",
@@ -209,6 +213,7 @@ const ProjectsList = () => {
         "Flow Control",
         "Congestion Control",
       ],
+      STATUS: "IN PROGRESS, PRIVATE REPO ...",
     },
     {
       title: "Savage Rampage",
@@ -292,9 +297,11 @@ const ProjectsList = () => {
                 &times;
               </CloseButton>
               <ProjectTitle>{selectedProject.title}</ProjectTitle>
+              <ProjectStatus>{selectedProject.STATUS}</ProjectStatus>
               <ProjectDescription>
                 {selectedProject.description}
               </ProjectDescription>
+
               <SkillsContainer>
                 {selectedProject.skills.map((skill, index) => (
                   <Skill key={index} whileHover={{ scale: 1.1 }}>
