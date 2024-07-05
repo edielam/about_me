@@ -24,11 +24,12 @@ const AboutTitle = styled.h2`
 const AboutContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   max-width: 800px;
   background: rgba(0, 100, 100, 0.5);
   padding: 2rem 2rem;
   border-radius: 20px;
+  text-align: left;
 `;
 
 const AboutText = styled.p`
@@ -78,6 +79,8 @@ const PullQuote = styled.blockquote`
   border-left: 3px solid #0ff;
   padding-left: 1rem;
   margin: 1rem 0;
+  text-align: center;
+  width: 100%;
 `;
 
 const About = () => {
