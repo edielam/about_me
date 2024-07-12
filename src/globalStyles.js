@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    cursor: url('path-to-custom-cursor.svg'), auto;
+    cursor: url('cursor.svg'), auto;
   }
 
   h2, h3, p, button {
