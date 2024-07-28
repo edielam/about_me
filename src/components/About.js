@@ -39,22 +39,22 @@ const AboutText = styled.p`
   margin-bottom: 1rem;
 `;
 
-const ResumeLink = styled.a`
-  font-size: 1.2rem;
-  color: #0ff;
-  text-decoration: none;
-  border: 1px solid #0ff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+// const ResumeLink = styled.a`
+//   font-size: 1.2rem;
+//   color: #0ff;
+//   text-decoration: none;
+//   border: 1px solid #0ff;
+//   padding: 0.5rem 1rem;
+//   border-radius: 5px;
+//   transition:
+//     background-color 0.3s,
+//     color 0.3s;
 
-  &:hover {
-    background-color: #0ff;
-    color: #000;
-  }
-`;
+//   &:hover {
+//     background-color: #0ff;
+//     color: #000;
+//   }
+// `;
 
 const Section = styled(motion.div)`
   margin-bottom: 1rem;
