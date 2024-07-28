@@ -187,9 +187,9 @@ const About = () => {
           </AboutText>
         </Section>
 
-        <ResumeLink href="resume.pdf" target="_blank">
+        {/* <ResumeLink href="resume.pdf" target="_blank">
           View My Resume
-        </ResumeLink>
+        </ResumeLink> */}
       </AboutContent>
     </AboutSection>
   );
