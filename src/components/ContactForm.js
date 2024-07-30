@@ -246,7 +246,7 @@ const ContactSection = styled.section`
   max-width: 600px;
   padding: 2rem;
   background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.secondary};
+  color: ${(props) => props.theme.primary};
   font-family: "Consolas", "Monaco", monospace;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

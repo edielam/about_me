@@ -11,7 +11,7 @@ const ProjectsSection = styled.section`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   font-family: "Consolas", "Monaco", monospace;
-  height: 100%;
+  // height: 100vh;
 `;
 
 const ProjectsTitle = styled.h2`

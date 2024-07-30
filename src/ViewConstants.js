@@ -82,14 +82,11 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const AppContainer = styled.div`
-  background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.text};
   display: grid;
   grid-template-columns: 250px 1fr;
-  // height: 100vh;
-  // background: #1e1e1e;
-  // color: #d4d4d4;
-  font-family: "Consolas", "Monaco", monospace;
+  height: 100vh;
+  background: #0e2a47;
+  color: #cfcfcf;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
