@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 const HeroSection = styled(motion.section)`
   height: 100%;
-  background: #0e2a47;
+  // background: #0e2a47;
   color: #cfcfcf;
   overflow: hidden;
   position: relative;

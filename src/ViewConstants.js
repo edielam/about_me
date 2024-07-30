@@ -1,12 +1,95 @@
+// import styled from "styled-components";
+// import { motion } from "framer-motion";
+
+// export const AppContainer = styled.div`
+//   display: grid;
+//   grid-template-columns: 250px 1fr;
+//   height: 100vh;
+//   background: #0e2a47;
+//   color: #cfcfcf;
+
+//   @media (max-width: 768px) {
+//     grid-template-columns: 1fr;
+//   }
+// `;
+
+// export const Sidebar = styled.nav`
+//   background: #0a1f35;
+//   display: flex;
+//   min-height: 100vh;
+//   padding: 1rem;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   width: 250px;
+//   z-index: 10;
+//   transition: transform 0.3s ease-in-out;
+
+//   @media (max-width: 768px) {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     transform: ${({ isOpen }) =>
+//       isOpen ? "translateX(0)" : "translateX(-100%)"};
+//   }
+// `;
+// export const PhotoContainer = styled.div`
+//   margin-top: 3rem;
+//   margin-bottom: 3rem;
+//   width: 4rem;
+//   height: 4rem;
+//   border-radius: 30%;
+//   overflow: hidden;
+//   border: 2px solid #0ff;
+// `;
+// export const MenuButton = styled.button`
+//   display: none;
+//   position: fixed;
+//   top: 1rem;
+//   left: 1rem;
+//   z-index: 20;
+//   background: none;
+//   border: none;
+//   color: #0b3;
+//   font-size: 2rem;
+//   cursor: pointer;
+//   &:hover {
+//     color: #0f0;
+//   }
+
+//   @media (max-width: 768px) {
+//     display: block;
+//   }
+// `;
+// export const Photo = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// `;
+
+// export const NavItem = styled(motion.button)`
+//   background: none;
+//   border: none;
+//   color: #0ff;
+//   font-size: 1.2rem;
+//   margin: 1rem 0;
+//   cursor: pointer;
+//   &:hover {
+//     color: #0f0;
+//   }
+// `;
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const AppContainer = styled.div`
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
   display: grid;
   grid-template-columns: 250px 1fr;
-  height: 100vh;
-  background: #0e2a47;
-  color: #cfcfcf;
+  // height: 100vh;
+  // background: #1e1e1e;
+  // color: #d4d4d4;
+  font-family: "Consolas", "Monaco", monospace;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -14,16 +97,17 @@ export const AppContainer = styled.div`
 `;
 
 export const Sidebar = styled.nav`
-  background: #0a1f35;
+  background: #252526;
   display: flex;
   min-height: 100vh;
-  padding: 1rem;
+  padding-left: 1.5rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 250px;
+  justify-content: flex-start;
+  width: 220px;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
+  border-right: 1px solid #333;
 
   @media (max-width: 768px) {
     position: fixed;
@@ -33,15 +117,17 @@ export const Sidebar = styled.nav`
       isOpen ? "translateX(0)" : "translateX(-100%)"};
   }
 `;
+
 export const PhotoContainer = styled.div`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 6rem;
-  height: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #0ff;
+  border: 2px solid #569cd6;
 `;
+
 export const MenuButton = styled.button`
   display: none;
   position: fixed;
@@ -50,17 +136,19 @@ export const MenuButton = styled.button`
   z-index: 20;
   background: none;
   border: none;
-  color: #0b3;
-  font-size: 2rem;
+  color: #569cd6;
+  font-size: 1.5rem;
   cursor: pointer;
+
   &:hover {
-    color: #0f0;
+    color: #4ec9b0;
   }
 
   @media (max-width: 768px) {
     display: block;
   }
 `;
+
 export const Photo = styled.img`
   width: 100%;
   height: 100%;
@@ -70,12 +158,18 @@ export const Photo = styled.img`
 export const NavItem = styled(motion.button)`
   background: none;
   border: none;
-  color: #0ff;
-  font-size: 1.2rem;
-  margin: 1rem 0;
+  color: #d4d4d4;
+  font-size: 1rem;
+  margin: 0.5rem 0;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.2s;
+
   &:hover {
-    color: #0f0;
+    background-color: #2d2d2d;
+    color: #569cd6;
   }
 `;
 
@@ -127,15 +221,6 @@ export const SkillsContainer = styled.div`
   padding: 1.5rem 0rem;
 `;
 
-// export const SkillCategory = styled.div`
-//   margin-bottom: 1rem;
-// `;
-
-// export const SkillCategoryTitle = styled.h3`
-//   color: #0ff;
-//   margin-bottom: 0.5rem;
-// `;
-
 export const Skill = styled(motion.span)`
   background: #0ff;
   color: #000;
@@ -146,3 +231,11 @@ export const Skill = styled(motion.span)`
   font-size: 0.8rem;
   font-weight: bold;
 `;
+// export const SkillCategory = styled.div`
+//   margin-bottom: 1rem;
+// `;
+
+// export const SkillCategoryTitle = styled.h3`
+//   color: #0ff;
+//   margin-bottom: 0.5rem;
+// `;

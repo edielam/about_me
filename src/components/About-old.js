@@ -1,97 +1,144 @@
-// src/components/About.js
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import ThemeToggle from "./ThemeToggler";
+import { ThemeContext } from "./ThemeContext";
 
-const AboutSection = styled(motion.section)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 2rem;
+const AboutSection = styled.section`
+  margin: 0rem;
+  padding: 5rem;
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
+  font-family: "Consolas", "Monaco", monospace;
 `;
 
 const AboutTitle = styled.h2`
-  font-size: 2.5rem;
-  color: #0ff;
+  font-size: 2rem;
+  color: ${(props) => props.theme.primary};
   margin-bottom: 2rem;
 `;
 
-const AboutContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1000px;
+const Section = styled.div`
+  margin-bottom: 2rem;
 `;
 
-const SkillsContainer = styled.div`
-  background: rgba(0, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-`;
-
-const SkillCategory = styled.div`
+const SectionTitle = styled.h3`
+  font-size: 1.2rem;
+  color: ${(props) => props.theme.secondary};
   margin-bottom: 1rem;
 `;
 
-const SkillCategoryTitle = styled.h3`
-  color: #0ff;
-  margin-bottom: 0.5rem;
-`;
-
-const Skill = styled(motion.span)`
-  background: #0ff;
-  color: #000;
-  padding: 0.3rem 0.8rem;
-  margin: 0.3rem;
-  border-radius: 15px;
-  display: inline-block;
-  font-size: 0.9rem;
-`;
-
 const AboutText = styled.p`
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  color: #e0e0e0;
+  margin-bottom: 1rem;
+  color: ${(props) => props.theme.text};
 `;
 
-const About = () => {
-  const skills = {
-    'Programming Languages': ['Python', 'Rust', 'JavaScript', 'Java', 'C++', 'TypeScript'],
-    'Web Dev Frameworks': ['React', 'Next.js', 'FastAPI', 'Spring Boot', 'Express.js', 'Node.js'],
-    // 'Backend Frameworks': ['FastAPI', 'Django', 'Flask', 'Spring Boot', 'Express.js', 'Node.js'],
-    'Cross-platform & Desktop': ['Tauri'],
-    'Database, Cloud & DevOps': ['PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD pipelines'],
-    'ML & Other Technologies': ['PyTorch', 'WebSockets', 'Libp2p'],
-    // 'Other Technologies': [],
-    // 'Tools & Methodologies': ['Git', 'Agile/Scrum', 'Test-Driven Development', 'Design Patterns']
-  };
+const PullQuote = styled.blockquote`
+  font-size: 1rem;
+  color: ${(props) => props.theme.accent};
+  border-left: 3px solid ${(props) => props.theme.primary};
+  padding-left: 1rem;
+  margin: 1rem 0;
+`;
+
+const CodeSnippet = styled.pre`
+  background: ${(props) => props.theme.codeBackground};
+  color: ${(props) => props.theme.codeText};
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+`;
+
+const About2 = () => {
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <AboutSection>
-      <AboutTitle>About Me</AboutTitle>
-      <AboutContent>
-        <AboutText>
-          My journey into the world of technology began with a fascination for AI that started six years ago. As someone with a background in Biomedical Engineering, I've always been captivated by cross-disciplinary fields, and AI's intersection with neuroscience and the philosophical debates on the nature of consciousness felt like the perfect blend of my interests. Over time, this passion led me to discover the immense potential of software engineering in revolutionizing our lives.
-          My philosophy towards software engineering is simple yet effective: let the project's goals and constraints guide the technologies I learn and implement. This approach has enabled me to become proficient in various programming paradigms and cloud architectures, and has allowed me to tackle a diverse range of challenges with innovative solutions.
-          One of my recent projects, CortexCode, is a testament to this approach. Born out of my frustration with resource constraints while attempting to fine-tune large language models for a Kaggle AI Olympiad competition, I created a peer-to-peer collaborative code editor with a runtime environment for compute sharing. Tailored towards distributed machine learning, CortexCode enables hobbyists like myself to pool resources even when separated by distance.
-          Developing CortexCode has been a highly rewarding experience. It allowed me to delve deep into concurrency systems, explore network security, and challenge myself in system engineering, especially while embedding a terminal emulator. It's projects like these that remind me why I love what I do, and I eagerly anticipate embarking on my next venture once CortexCode is complete.
-          At the heart of my software engineering journey is a desire to make a positive impact on people's lives. Whether it's solving real-world problems, optimizing performance, or ensuring code quality, my goal is to create meaningful solutions while having fun along the way. And as a firm believer in the power of knowledge-sharing, I continue to contribute to the wider developer community through my technical blog, where I share insights, lessons learned, and best practices from my experiences.</AboutText>
-        <SkillsContainer>
-          {Object.entries(skills).map(([category, categorySkills]) => (
-            <SkillCategory key={category}>
-              <SkillCategoryTitle>{category}</SkillCategoryTitle>
-              {categorySkills.map((skill, index) => (
-                <Skill key={index} whileHover={{ scale: 1.1 }}>
-                  {skill}
-                </Skill>
-              ))}
-            </SkillCategory>
-          ))}
-        </SkillsContainer>
-      </AboutContent>
+    <AboutSection theme={theme}>
+      <ThemeToggle />
+      <AboutTitle theme={theme}>About Me</AboutTitle>
+      <Section>
+        <SectionTitle theme={theme}>{"// Background"}</SectionTitle>
+        <AboutText theme={theme}>
+          Biomedical Engineer turned Software Developer. Six years of experience
+          in tech, with a focus on AI and cross-disciplinary applications.
+        </AboutText>
+      </Section>
+      <Section>
+        <SectionTitle theme={theme}>{"// Philosophy"}</SectionTitle>
+        <PullQuote theme={theme}>
+          "The art of programming is the art of organizing complexity." ~ Edsger
+          W. Dijkstra
+        </PullQuote>
+        <AboutText theme={theme}>
+          I've always been captivated by Edsger W. Dijkstra's idea that "The art
+          of programming is the art of organizing complexity." To me, this quote
+          underlines the beauty of coding: transforming chaos into order. It's
+          what motivates me to keep refining my skills and embrace new and often
+          tougher challenges. By embracing this philosophy, I strive to push my
+          boundaries and develop innovative solutions that not only streamline
+          my work but also fuel my passion for programming.
+        </AboutText>
+      </Section>
+      {/* <Section>
+        <SectionTitle theme={theme}>
+          {"// Recent Project: CortexCode"}
+        </SectionTitle>
+        <AboutText theme={theme}>
+          A peer-to-peer collaborative code editor with runtime environment for
+          compute sharing. Built with Rust and Tauri for optimal performance and
+          resource efficiency.
+        </AboutText>
+        <CodeSnippet theme={theme}>
+          {`
+// WebRTC DTLS Handshake certificate
+async fn read_or_create_certificate(path: &Path) -> Result<Certificate> {
+    if path.exists() {
+        let pem = fs::read_to_string(&path).await?;
+
+        info!("Using existing certificate from {}", path.display());
+
+        return Ok(Certificate::from_pem(&pem)?);
+    }
+
+    let cert = Certificate::generate(&mut rand::thread_rng())?;
+    fs::write(&path, &cert.serialize_pem().as_bytes()).await?;
+
+    info!(
+        "Generated new certificate and wrote it to {}",
+        path.display()
+    );
+
+    Ok(cert)
+}
+          `}
+        </CodeSnippet>
+      </Section> */}
+      <Section>
+        <SectionTitle theme={theme}>{"// Skills"}</SectionTitle>
+        <CodeSnippet theme={theme}>
+          {`
+const skills = [
+  "Rust", "Python", "JavaScript",
+  "AI/Machine Learning",
+  "Distributed Systems",
+  "Full-Stack Development",
+  "System Design",
+  "Performance Optimization"
+];
+          `}
+        </CodeSnippet>
+      </Section>
+      <Section>
+        <SectionTitle theme={theme}>{"// Current Focus"}</SectionTitle>
+        <AboutText theme={theme}>
+          Exploring concurrency patterns in Rust, diving deeper into distributed
+          systems, and contributing to open-source projects in the AI and
+          developer tools space.
+        </AboutText>
+      </Section>
     </AboutSection>
   );
 };
 
-export default About;
+export default About2;

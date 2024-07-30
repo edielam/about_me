@@ -1,10 +1,10 @@
 // src/App.js
-import React, { useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import * as THREE from "three";
+// import * as THREE from "three";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import ProjectsList from "./components/ProjectsList";
+// import About from "./components/About";
+// import ProjectsList from "./components/ProjectsList";
 import ContactForm from "./components/ContactForm";
 import { MdOutlineMenuBook } from "react-icons/md";
 
@@ -13,7 +13,7 @@ import {
   AppContainer,
   Sidebar,
   NavItem,
-  BackSea,
+  // BackSea,
   ContentArea,
   SectionWrapper,
   pageVariants,
@@ -22,76 +22,78 @@ import {
   Photo,
   MenuButton,
 } from "./ViewConstants";
+import Project2 from "./components/Project2";
+import About2 from "./components/About-old";
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const canvasRef = useRef(null);
+  // const canvasRef = useRef(null);
 
-  useEffect(() => {
-    // Set up Three.js scene for particle background
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000,
-    );
-    camera.position.z = 5;
+  // useEffect(() => {
+  //   // Set up Three.js scene for particle background
+  //   const scene = new THREE.Scene();
+  //   const camera = new THREE.PerspectiveCamera(
+  //     75,
+  //     window.innerWidth / window.innerHeight,
+  //     0.1,
+  //     1000,
+  //   );
+  //   camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvasRef.current,
-      alpha: true,
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  //   const renderer = new THREE.WebGLRenderer({
+  //     canvas: canvasRef.current,
+  //     alpha: true,
+  //   });
+  //   renderer.setSize(window.innerWidth, window.innerHeight);
 
-    // Create particles
-    const particlesCount = 1000;
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesMaterial = new THREE.PointsMaterial({
-      color: "#0ff",
-      size: 0.05,
-    });
+  //   // Create particles
+  //   const particlesCount = 1000;
+  //   const particlesGeometry = new THREE.BufferGeometry();
+  //   const particlesMaterial = new THREE.PointsMaterial({
+  //     color: "#0ff",
+  //     size: 0.05,
+  //   });
 
-    const particlesPositions = new Float32Array(particlesCount * 3);
-    for (let i = 0; i < particlesCount * 3; i++) {
-      particlesPositions[i] = (Math.random() - 0.5) * 10;
-    }
+  //   const particlesPositions = new Float32Array(particlesCount * 3);
+  //   for (let i = 0; i < particlesCount * 3; i++) {
+  //     particlesPositions[i] = (Math.random() - 0.5) * 10;
+  //   }
 
-    particlesGeometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(particlesPositions, 3),
-    );
-    const particlesMesh = new THREE.Points(
-      particlesGeometry,
-      particlesMaterial,
-    );
-    scene.add(particlesMesh);
+  //   particlesGeometry.setAttribute(
+  //     "position",
+  //     new THREE.BufferAttribute(particlesPositions, 3),
+  //   );
+  //   const particlesMesh = new THREE.Points(
+  //     particlesGeometry,
+  //     particlesMaterial,
+  //   );
+  //   scene.add(particlesMesh);
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
+  //   // Animation loop
+  //   const animate = () => {
+  //     requestAnimationFrame(animate);
 
-      particlesMesh.rotation.y += 0.001;
+  //     particlesMesh.rotation.y += 0.001;
 
-      renderer.render(scene, camera);
-    };
-    animate();
+  //     renderer.render(scene, camera);
+  //   };
+  //   animate();
 
-    // Handle window resize
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
+  //   // Handle window resize
+  //   const handleResize = () => {
+  //     camera.aspect = window.innerWidth / window.innerHeight;
+  //     camera.updateProjectionMatrix();
+  //     renderer.setSize(window.innerWidth, window.innerHeight);
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      // Clean up Three.js scene
-      window.removeEventListener("resize", handleResize);
-      renderer.dispose();
-    };
-  }, []);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     // Clean up Three.js scene
+  //     window.removeEventListener("resize", handleResize);
+  //     renderer.dispose();
+  //   };
+  // }, []);
 
   return (
     <AppContainer>
@@ -99,6 +101,50 @@ const App = () => {
         <MdOutlineMenuBook />
       </MenuButton>
       <Sidebar isOpen={isMenuOpen}>
+        <PhotoContainer>
+          <Photo
+            src="https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
+            alt="Eddy"
+          />
+        </PhotoContainer>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("hero");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Home"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("about");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// About"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("projects");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Projects"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("contact");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Contact"}
+        </NavItem>
+      </Sidebar>
+      {/* <Sidebar isOpen={isMenuOpen}>
         <PhotoContainer>
           <Photo
             src="https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
@@ -142,9 +188,9 @@ const App = () => {
           Contact
         </NavItem>
         {/* <NavItem whileHover={{ scale: 1.1 }} onClick={() => setCurrentSection('blog')}>Blog</NavItem> */}
-      </Sidebar>
+      {/* </Sidebar>  */}
       <ContentArea>
-        <BackSea>
+        {/* <BackSea>
           <canvas
             ref={canvasRef}
             style={{
@@ -155,7 +201,7 @@ const App = () => {
               height: "100%",
             }}
           />
-        </BackSea>
+        </BackSea> */}
         <AnimatePresence mode="wait">
           {currentSection === "hero" && <Hero />}
           {currentSection === "about" && (
@@ -167,7 +213,7 @@ const App = () => {
               variants={pageVariants}
               transition={pageTransition}
             >
-              <About />
+              <About2 />
             </SectionWrapper>
           )}
           {currentSection === "projects" && (
@@ -179,7 +225,8 @@ const App = () => {
               variants={pageVariants}
               transition={pageTransition}
             >
-              <ProjectsList />
+              {/* <ProjectsList /> */}
+              <Project2 />
             </SectionWrapper>
           )}
           {currentSection === "contact" && (
