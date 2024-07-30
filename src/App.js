@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 // import * as THREE from "three";
 import Hero from "./components/Hero";
