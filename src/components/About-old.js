@@ -9,7 +9,7 @@ const AboutSection = styled.section`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   font-family: "Consolas", "Monaco", monospace;
-  height: 100%;
+  height: 120%;
 `;
 
 const AboutTitle = styled.h2`
