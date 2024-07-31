@@ -159,7 +159,7 @@ export const NavItem = styled(motion.button)`
   font-size: 1rem;
   margin: 0.5rem 0;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   width: 100%;
   text-align: left;
   transition: background-color 0.2s;
