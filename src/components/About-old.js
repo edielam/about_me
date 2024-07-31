@@ -5,10 +5,11 @@ import { ThemeContext } from "./ThemeContext";
 
 const AboutSection = styled.section`
   margin: 0rem;
-  padding: 5rem;
+  padding: 2.5rem;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   font-family: "Consolas", "Monaco", monospace;
+  height: 100vh;
 `;
 
 const AboutTitle = styled.h2`

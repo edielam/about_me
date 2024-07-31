@@ -7,11 +7,11 @@ import ThemeToggle from "./ThemeToggler";
 
 const ProjectsSection = styled.section`
   margin-left: 0rem;
-  padding: 5rem;
+  padding: 2.5rem;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   font-family: "Consolas", "Monaco", monospace;
-  // height: 100vh;
+  height: 100vh;
 `;
 
 const ProjectsTitle = styled.h2`
