@@ -245,7 +245,7 @@ const ContactSection = styled.section`
   width: 100%;
   max-width: 600px;
   padding: 2rem;
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme.codeBackground};
   color: ${(props) => props.theme.primary};
   font-family: "Consolas", "Monaco", monospace;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -317,6 +317,7 @@ const SubmitButton = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 12px;
   align-self: flex-start;
   transition: background-color 0.3s;
   &:hover {
@@ -373,12 +374,13 @@ const ContactForm = () => {
     <FullContainer theme={theme}>
       <ContactSection theme={theme}>
         <ThemeToggle />
-        <ContactTitle>{"// Contact"}</ContactTitle>
+        <ContactTitle>Contact</ContactTitle>
         <SocialLinks>
           <SocialIcon
             href="https://github.com/edielam"
             target="_blank"
             rel="noopener noreferrer"
+            theme={theme}
           >
             <FaGithub />
           </SocialIcon>
@@ -386,6 +388,7 @@ const ContactForm = () => {
             href="https://www.linkedin.com/in/edward-lampoh-a91338b0/"
             target="_blank"
             rel="noopener noreferrer"
+            theme={theme}
           >
             <FaLinkedin />
           </SocialIcon>
@@ -393,6 +396,7 @@ const ContactForm = () => {
             href="https://x.com/edie_I_AM"
             target="_blank"
             rel="noopener noreferrer"
+            theme={theme}
           >
             <FaXTwitter />
           </SocialIcon>
@@ -421,7 +425,9 @@ const ContactForm = () => {
             onChange={handleChange}
             value={formData.message}
           />
-          <SubmitButton type="submit">Send Message</SubmitButton>
+          <SubmitButton theme={theme} type="submit">
+            Send Message
+          </SubmitButton>
         </Form>
       </ContactSection>
     </FullContainer>
