@@ -84,7 +84,7 @@ import { motion } from "framer-motion";
 export const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 250px 1fr;
-  height: 100vh;
+  // height: 100;
   background: #0e2a47;
   color: #cfcfcf;
 
