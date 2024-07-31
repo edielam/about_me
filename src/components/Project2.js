@@ -7,10 +7,15 @@ import ThemeToggle from "./ThemeToggler";
 
 const ProjectsSection = styled.section`
   margin-left: 0rem;
-  padding: 2.5rem;
+  padding: 5rem;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   font-family: "Consolas", "Monaco", monospace;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
 `;
 
 const ProjectsTitle = styled.h2`
