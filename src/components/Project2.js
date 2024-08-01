@@ -124,8 +124,8 @@ const Project2 = () => {
                 </ProjectLink>
               </ProjectHeader>
               <ProjectDescription>{project.description}</ProjectDescription>
-              {project.STATUS && (
-                <ProjectStatus>{project.STATUS}</ProjectStatus>
+              {project.status && (
+                <ProjectStatus>{project.status}</ProjectStatus>
               )}
               {expandedProject === index && (
                 <motion.div
