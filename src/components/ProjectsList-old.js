@@ -1,14 +1,14 @@
 // src/components/ProjectsList.js
-import React from 'react';
-import styled from 'styled-components';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
-import * as THREE from 'three';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import { extend } from '@react-three/fiber';
-import fontJson from '../assets/helvetiker_regular.typeface.json'; // Make sure to have a font JSON file
-import '../extend';
+import React from "react";
+import styled from "styled-components";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars } from "@react-three/drei";
+import * as THREE from "three";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import { extend } from "@react-three/fiber";
+import fontJson from "../assets/helvetiker_regular.typeface.json"; // Make sure to have a font JSON file
+import "../extend";
 extend({ TextGeometry });
 
 const ProjectsSection = styled.section`
@@ -25,25 +25,28 @@ const ProjectsTitle = styled.h2`
   text-align: center;
 `;
 
-const ProjectsList = () => {
+const ProjectsList2 = () => {
   const font = new FontLoader().parse(fontJson);
   const projects = [
     {
       title: "CortexCode",
-      description: "A real-time p2p collaborative code editor with an embedded terminal and compute sharing using an isolated runtime environment. Technologies: Tauri, Rust, React, WebSocket, libp2p, Docker Swarm."
+      description:
+        "A real-time p2p collaborative code editor with an embedded terminal and compute sharing using an isolated runtime environment. Technologies: Tauri, Rust, React, WebSocket, libp2p, Docker Swarm.",
     },
     {
       title: "Oxterm",
-      description: "A basic terminal emulator built from scratch using Rust. Technologies: Rust."
+      description:
+        "A basic terminal emulator built from scratch using Rust. Technologies: Rust.",
     },
     {
       title: "Jeflix",
-      description: "A MERN stack clone of Netflix. Technologies: MongoDB, Express, React, Node.js."
+      description:
+        "A MERN stack clone of Netflix. Technologies: MongoDB, Express, React, Node.js.",
     },
     {
       title: "TCP from Scratch",
-      description: "Implemented TCP from scratch in Rust. Technologies: Rust."
-    }
+      description: "Implemented TCP from scratch in Rust. Technologies: Rust.",
+    },
   ];
 
   return (
@@ -70,4 +73,4 @@ const ProjectsList = () => {
   );
 };
 
-export default ProjectsList;
+export default ProjectsList2;
