@@ -124,7 +124,7 @@ async fn read_or_create_certificate(path: &Path) -> Result<Certificate> {
         <CodeSnippet theme={theme}>
           {`
 const skills = [
-  "Rust", "Python", "JavaScript",
+  "Java", "Rust", "Python", "JavaScript",
   "AI/Machine Learning",
   "Distributed Systems",
   "Full-Stack Development",

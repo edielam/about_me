@@ -7,7 +7,6 @@ import ThemeToggle from "./ThemeToggler";
 import { myProjects } from "./Desc";
 
 const ProjectsSection = styled.section`
-  margin-left: 0rem;
   padding: 5rem;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
@@ -24,30 +23,32 @@ const ProjectsTitle = styled.h2`
   color: ${(props) => props.theme.primary};
 `;
 
-const ProjectList = styled.ul`
-  list-style-type: none;
-  padding: 0;
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 `;
 
-const ProjectItem = styled.li`
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  border-left: 3px solid #569cd6;
-  padding-left: 1rem;
+const ProjectCard = styled(motion.div)`
+  background: ${(props) => props.theme.cardBackground};
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 
-  &:hover img {
-    transform: scale(1.05);
+  &:hover {
+    transform: translateY(-5px);
   }
 `;
 
 const Thumbnail = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 150px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-right: 1rem;
-  transition: transform 0.3s ease;
+`;
+
+const ProjectContent = styled.div`
+  padding: 1rem;
 `;
 
 const ProjectHeader = styled.div`
@@ -76,19 +77,22 @@ const ProjectLink = styled.a`
 const ProjectDescription = styled.p`
   margin-bottom: 1rem;
   font-family: monospace;
+  font-size: 0.9rem;
 `;
 
 const ProjectStatus = styled.span`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #608b4e;
   font-style: italic;
+  display: block;
+  margin-bottom: 0.5rem;
 `;
 
 const Project2 = () => {
   const [expandedProject, setExpandedProject] = useState(null);
-
   const projects = myProjects;
   const { theme } = useContext(ThemeContext);
+
   const toggleProject = (index) => {
     setExpandedProject(expandedProject === index ? null : index);
   };
@@ -97,15 +101,17 @@ const Project2 = () => {
     <ProjectsSection theme={theme}>
       <ThemeToggle />
       <ProjectsTitle theme={theme}>Projects</ProjectsTitle>
-      <ProjectList theme={theme}>
+      <ProjectGrid>
         {projects.map((project, index) => (
-          <ProjectItem
+          <ProjectCard
             key={index}
+            theme={theme}
+            whileHover={{ scale: 1.03 }}
             onMouseEnter={() => toggleProject(index)}
             onMouseLeave={() => setExpandedProject(null)}
           >
             <Thumbnail src={project.image} alt={project.title} />
-            <div>
+            <ProjectContent>
               <ProjectHeader theme={theme}>
                 <ProjectTitle theme={theme}>{project.title}</ProjectTitle>
                 <ProjectLink
@@ -114,7 +120,7 @@ const Project2 = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  See Project
+                  View
                 </ProjectLink>
               </ProjectHeader>
               <ProjectDescription>{project.description}</ProjectDescription>
@@ -135,10 +141,10 @@ const Project2 = () => {
                   </SkillsContainer>
                 </motion.div>
               )}
-            </div>
-          </ProjectItem>
+            </ProjectContent>
+          </ProjectCard>
         ))}
-      </ProjectList>
+      </ProjectGrid>
     </ProjectsSection>
   );
 };
