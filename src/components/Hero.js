@@ -187,7 +187,7 @@ const Hero = () => {
           `target/debug/eddy_universe`
           <br />
           <br />
-          Hello, World!
+          Hello, Welcome to My Space!
         </TerminalOutput>
         <TerminalPrompt prompt="(0xed24):~/eddy_universe$ ">
           explore
