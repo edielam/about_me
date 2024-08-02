@@ -9,12 +9,12 @@ import {
 import Home from "./Home";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000); // Adjust the time as needed
     return () => clearTimeout(timer);
-  }, []);
+  });
   return (
     <Router>
       <Routes>
