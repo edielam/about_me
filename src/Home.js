@@ -1,9 +1,9 @@
 // src/components/home.js
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Hero from "./components/Hero";
 import ContactForm from "./components/ContactForm";
-import { MdOutlineMenuBook } from "react-icons/md";
+import { LuMenuSquare } from "react-icons/lu";
 
 import {
   AppContainer,
@@ -19,10 +19,12 @@ import {
 } from "./ViewConstants";
 import Project2 from "./components/Project2";
 import About2 from "./components/About-old";
+import { ThemeContext } from "./components/ThemeContext";
 
 const Home = ({ section }) => {
   const [currentSection, setCurrentSection] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     if (section) {
@@ -31,8 +33,8 @@ const Home = ({ section }) => {
   }, [section]);
   return (
     <AppContainer>
-      <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <MdOutlineMenuBook />
+      <MenuButton theme={theme} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <LuMenuSquare />
       </MenuButton>
       <Sidebar isOpen={isMenuOpen}>
         <PhotoContainer>

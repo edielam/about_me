@@ -29,7 +29,7 @@ const TerminalWindow = styled.div`
 const TerminalPrompt = styled.div`
   color: #0ff;
   &::before {
-    content: "(0xed24):~$ ";
+    content: "${(props) => props.prompt || "(0xed24):~$ "}";
   }
 `;
 
@@ -172,9 +172,26 @@ const Hero = () => {
         style={{ position: "absolute", top: 0, left: 0 }}
       />
       <TerminalWindow>
-        <TerminalPrompt>cargo add myspace</TerminalPrompt>
-        <TerminalOutput>Welcome to Eddy's Universe</TerminalOutput>
-        <TerminalPrompt>explore</TerminalPrompt>
+        <TerminalPrompt>cargo new eddy_universe</TerminalPrompt>
+        <TerminalOutput>
+          Created binary (application) `eddy_universe` package
+        </TerminalOutput>
+        <TerminalPrompt>cd eddy_universe</TerminalPrompt>
+        <TerminalPrompt prompt="(0xed24):~/eddy_universe$ "></TerminalPrompt>
+        <TerminalPrompt prompt="(0xed24):~/eddy_universe$ ">
+          cargo run
+        </TerminalPrompt>
+        <TerminalOutput>
+          Compiling eddy_universe v0.1.0 (/path/to/eddy_universe) Finished dev
+          [unoptimized + debuginfo] target(s) in 0.88s Running
+          `target/debug/eddy_universe`
+          <br />
+          <br />
+          Hello, World!
+        </TerminalOutput>
+        <TerminalPrompt prompt="(0xed24):~/eddy_universe$ ">
+          explore
+        </TerminalPrompt>
         <TerminalOutput>Select an option:</TerminalOutput>
         {options.map((option, index) => (
           <MenuOption
