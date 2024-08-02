@@ -1,5 +1,5 @@
 //src/App.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,6 +9,12 @@ import {
 import Home from "./Home";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000); // Adjust the time as needed
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <Router>
       <Routes>
