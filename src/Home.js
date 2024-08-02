@@ -20,11 +20,25 @@ import {
 import Project2 from "./components/Project2";
 import About2 from "./components/About-old";
 import { ThemeContext } from "./components/ThemeContext";
+import { useLocation } from "react-router-dom";
 
 const Home = ({ section }) => {
-  const [currentSection, setCurrentSection] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
+
+  const location = useLocation();
+  const [currentSection, setCurrentSection] = useState(() => {
+    switch (location.pathname) {
+      case "/0x1":
+        return "about";
+      case "/0x2":
+        return "projects";
+      case "/0x3":
+        return "contact";
+      default:
+        return "hero";
+    }
+  });
 
   useEffect(() => {
     if (section) {
