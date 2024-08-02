@@ -1,0 +1,127 @@
+// src/components/home.js
+import React, { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import Hero from "./components/Hero";
+import ContactForm from "./components/ContactForm";
+import { MdOutlineMenuBook } from "react-icons/md";
+
+import {
+  AppContainer,
+  Sidebar,
+  NavItem,
+  ContentArea,
+  SectionWrapper,
+  pageVariants,
+  pageTransition,
+  PhotoContainer,
+  Photo,
+  MenuButton,
+} from "./ViewConstants";
+import Project2 from "./components/Project2";
+import About2 from "./components/About-old";
+
+const Home = ({ section }) => {
+  const [currentSection, setCurrentSection] = useState("hero");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (section) {
+      setCurrentSection(section);
+    }
+  }, [section]);
+  return (
+    <AppContainer>
+      <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <MdOutlineMenuBook />
+      </MenuButton>
+      <Sidebar isOpen={isMenuOpen}>
+        <PhotoContainer>
+          <Photo
+            src="https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
+            alt="Eddy"
+          />
+        </PhotoContainer>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("hero");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Home"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("about");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// About"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("projects");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Projects"}
+        </NavItem>
+        <NavItem
+          whileHover={{ x: 5 }}
+          onClick={() => {
+            setCurrentSection("contact");
+            setIsMenuOpen(false);
+          }}
+        >
+          {"// Contact"}
+        </NavItem>
+      </Sidebar>
+      <ContentArea>
+        <AnimatePresence mode="wait">
+          {currentSection === "hero" && <Hero />}
+          {currentSection === "about" && (
+            <SectionWrapper
+              key="about"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              <About2 />
+            </SectionWrapper>
+          )}
+          {currentSection === "projects" && (
+            <SectionWrapper
+              key="projects"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              {/* <ProjectsList /> */}
+              <Project2 />
+            </SectionWrapper>
+          )}
+          {currentSection === "contact" && (
+            <SectionWrapper
+              key="contact"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={pageVariants}
+              transition={pageTransition}
+            >
+              <ContactForm />
+            </SectionWrapper>
+          )}
+        </AnimatePresence>
+      </ContentArea>
+    </AppContainer>
+  );
+};
+
+export default Home;

@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = styled(motion.section)`
   height: 100%;
@@ -36,9 +37,26 @@ const TerminalOutput = styled.div`
   color: #0f0;
   margin-top: 10px;
 `;
+const MenuOption = styled.div`
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px 10px;
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    display: block;
+    margin: 10px 10px;
+  }
+`;
 
 const Hero = () => {
+  const [selectedOption, setSelectedOption] = useState(0);
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
+  const options = ["About Me", "Projects", "Say Hi"];
 
   useEffect(() => {
     // Set up Three.js scene for particle background
@@ -106,6 +124,47 @@ const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      switch (e.key) {
+        case "ArrowUp":
+          setSelectedOption((prev) =>
+            prev > 0 ? prev - 1 : options.length - 1,
+          );
+          break;
+        case "ArrowDown":
+          setSelectedOption((prev) =>
+            prev < options.length - 1 ? prev + 1 : 0,
+          );
+          break;
+        case "Enter":
+          handleOptionSelect(options[selectedOption]);
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedOption, options]);
+
+  const handleOptionSelect = (option) => {
+    switch (option.toLowerCase()) {
+      case "about me":
+        navigate("/0x1");
+        break;
+      case "projects":
+        navigate("/0x2");
+        break;
+      case "say hi":
+        navigate("/0x3");
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <HeroSection>
       <canvas
@@ -115,8 +174,18 @@ const Hero = () => {
       <TerminalWindow>
         <TerminalPrompt>cargo add myspace</TerminalPrompt>
         <TerminalOutput>Welcome to Eddy's Universe</TerminalOutput>
-        <TerminalPrompt>explore projects</TerminalPrompt>
-        <TerminalOutput>Loading project data...</TerminalOutput>
+        <TerminalPrompt>explore</TerminalPrompt>
+        <TerminalOutput>Select an option:</TerminalOutput>
+        {options.map((option, index) => (
+          <MenuOption
+            key={option}
+            onClick={() => handleOptionSelect(option)}
+            onKeyDown={(e) => e.key === "Enter" && handleOptionSelect(option)}
+            tabIndex={0}
+          >
+            {index === selectedOption ? "[x]" : "[ ]"} {option}
+          </MenuOption>
+        ))}
       </TerminalWindow>
     </HeroSection>
   );
