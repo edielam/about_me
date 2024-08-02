@@ -1,6 +1,11 @@
 //src/App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./Home";
 
 const App = () => {
@@ -11,6 +16,7 @@ const App = () => {
         <Route path="/0x1" element={<Home section="about" />} />
         <Route path="/0x2" element={<Home section="projects" />} />
         <Route path="/0x3" element={<Home section="contact" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
