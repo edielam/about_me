@@ -20,11 +20,12 @@ import {
 import Project2 from "./components/Project2";
 import About2 from "./components/About-old";
 import { ThemeContext } from "./components/ThemeContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Home = ({ section }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
   const location = useLocation();
   const [currentSection, setCurrentSection] = useState(() => {
@@ -62,6 +63,7 @@ const Home = ({ section }) => {
           onClick={() => {
             setCurrentSection("hero");
             setIsMenuOpen(false);
+            navigate("/");
           }}
         >
           {"// Home"}
@@ -71,6 +73,7 @@ const Home = ({ section }) => {
           onClick={() => {
             setCurrentSection("about");
             setIsMenuOpen(false);
+            navigate("/0x1");
           }}
         >
           {"// About"}
@@ -80,6 +83,7 @@ const Home = ({ section }) => {
           onClick={() => {
             setCurrentSection("projects");
             setIsMenuOpen(false);
+            navigate("/0x2");
           }}
         >
           {"// Projects"}
@@ -89,6 +93,7 @@ const Home = ({ section }) => {
           onClick={() => {
             setCurrentSection("contact");
             setIsMenuOpen(false);
+            navigate("/0x3");
           }}
         >
           {"// Contact"}
