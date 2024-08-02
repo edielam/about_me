@@ -24,6 +24,7 @@ const TerminalWindow = styled.div`
   transform: translate(-50%, -50%);
   width: 80%;
   max-width: 600px;
+  font-weight: 550;
 `;
 
 const TerminalPrompt = styled.div`
