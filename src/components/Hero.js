@@ -147,7 +147,7 @@ const Hero = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedOption, options]);
+  });
 
   const handleOptionSelect = (option) => {
     switch (option.toLowerCase()) {
