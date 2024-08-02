@@ -9,12 +9,13 @@ import {
 import Home from "./Home";
 
 const App = () => {
-  const [setLoading] = useState(true);
+  //eslint-disable-next-line
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000); // Adjust the time as needed
     return () => clearTimeout(timer);
-  });
+  }, []);
   return (
     <Router>
       <Routes>

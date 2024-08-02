@@ -183,9 +183,7 @@ const Hero = () => {
           cargo run
         </TerminalPrompt>
         <TerminalOutput>
-          Compiling eddy_universe v0.1.0 (/path/to/eddy_universe) Finished dev
-          [unoptimized + debuginfo] target(s) in 0.88s Running
-          `target/debug/eddy_universe`
+          Compiling eddy_universe v0.1.0 Finished dev in 0.88s Running
           <br />
           <br />
           Hello, Welcome to My Space!
