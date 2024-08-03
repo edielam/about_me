@@ -15,6 +15,7 @@ const lightTheme = {
   primaryHover: "#4a85b9",
   codeBackground: "#e8e8e8",
   toggleBackground: "#2d2d2d",
+  menuBackground: "#239e96",
   codeText: "#333",
 };
 
@@ -26,6 +27,7 @@ const darkTheme = {
   accent: "#ce9178",
   border: "#333",
   inputBackground: "#2d2d2d",
+  menuBackground: "#239e96",
   buttonText: "#000",
   primaryHover: "#78b0e6",
   codeBackground: "#2d2d2d",

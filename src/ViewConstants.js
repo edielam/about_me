@@ -133,8 +133,8 @@ export const MenuButton = styled.button`
   z-index: 20;
   background: none;
   border: none;
-  color: ${(props) => props.theme.toggleBackground};
-  font-size: 1.5rem;
+  color: ${(props) => props.theme.menuBackground};
+  font-size: 2rem;
   cursor: pointer;
 
   &:hover {
