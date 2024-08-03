@@ -1,5 +1,22 @@
 export const myProjects = [
   {
+    title: "TrustPay",
+    description: `TrustPay is a P2P escrow payment platform designed to enhance trust between buyers and sellers in e-commerce transactions. Built with a frontend using Next.js with TypeScript and Tailwind CSS, and a backend using Node.js with Express and TypeScript. Integrating with Stripe for payment processing, this platform provides a comprehensive solution for small-scale entrepreneurs looking to ensure secure and trustworthy online transactions.`,
+    image:
+      "https://raw.githubusercontent.com/edielam/TrustMe/main/project_shots/Screenshot%202024-08-02%20at%2011.54.47%E2%80%AFPM.png",
+    link: "https://github.com/edielam/TrustMe",
+    skills: [
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "Payment Processing",
+      "API Development",
+      "P2P",
+    ],
+  },
+  {
     title: "CortexCode",
     description: `CortexCode is a real-time p2p collaborative code editor that includes an embedded terminal and compute-sharing capabilities. Built with Rust, JavaScript, and Tauri, this project was a deep dive into distributed systems and real-time collaboration. The challenge was to ensure seamless communication and synchronization across different platforms, making it an exciting project that pushed my understanding of Libp2p, WebRTC, and distributed systems.`,
     image:
@@ -13,7 +30,6 @@ export const myProjects = [
       "WebRTC",
       "P2P Networking",
       "Cross-platform Development",
-      "Real-time Collaboration",
       "Docker Swarm",
       "Distributed Systems",
     ],
