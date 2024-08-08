@@ -3,7 +3,7 @@ export const myProjects = [
     title: "TrustPay",
     description: `TrustPay is a P2P escrow payment platform designed to enhance trust between buyers and sellers in e-commerce transactions. Built with a frontend using Next.js with TypeScript and Tailwind CSS, and a backend using Node.js with Express and TypeScript. Integrating with Stripe for payment processing, this platform provides a comprehensive solution for small-scale entrepreneurs looking to ensure secure and trustworthy online transactions.`,
     image:
-      "https://raw.githubusercontent.com/edielam/TrustMe/main/project_shots/Screenshot%202024-08-02%20at%2011.54.47%E2%80%AFPM.png",
+      "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/home3.png",
     link: "https://github.com/edielam/TrustMe",
     skills: [
       "TypeScript",
