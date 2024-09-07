@@ -17,7 +17,7 @@ export const myProjects = [
   },
   {
     title: "CortexCode",
-    description: `A real-time collaborative code editor with an embedded terminal, built with Rust, Tauri, and WebRTC for P2P networking.`,
+    description: `A collaborative code editor for compute sharing among peers for resource intensive tasks over a P2P network, built with Rust, Tauri, React and Libp2p(quic).`,
     image:
       "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/cortex/d3.png",
     link: "https://github.com/edielam/TerminalEditor-CC",
