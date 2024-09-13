@@ -146,7 +146,7 @@ const ProjectsList = () => {
       description:
         "A real-time p2p collaborative code editor with an embedded terminal and compute sharing.",
       image:
-        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/mini.png",
+        "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/cortex/d7.png",
       link: "https://github.com/edielam/TerminalEditor-CC",
       skills: [
         "Rust",
