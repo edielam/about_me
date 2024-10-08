@@ -54,7 +54,7 @@ const Home = ({ section }) => {
       <Sidebar isOpen={isMenuOpen}>
         <PhotoContainer>
           <Photo
-            src="https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
+            src= "https://raw.githubusercontent.com/edielam/Miawe/refs/heads/main/ed_dp.jpg"// "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/b5.png"
             alt="Eddy"
           />
         </PhotoContainer>
