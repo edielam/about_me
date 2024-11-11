@@ -29,7 +29,7 @@ const ProjectsList2 = () => {
   const font = new FontLoader().parse(fontJson);
   const projects = [
     {
-      title: "CortexCode",
+      title: "Lever",
       description:
         "A real-time p2p collaborative code editor with an embedded terminal and compute sharing using an isolated runtime environment. Technologies: Tauri, Rust, React, WebSocket, libp2p, Docker Swarm.",
     },
