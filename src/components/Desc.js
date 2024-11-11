@@ -16,7 +16,7 @@ export const myProjects = [
     ],
   },
   {
-    title: "CortexCode",
+    title: "Lever",
     description: `A collaborative code editor for compute sharing among peers for resource intensive tasks over a P2P network, built with Rust, Tauri, React and Libp2p(quic).`,
     image:
       "https://raw.githubusercontent.com/edielam/TerminalEditor-CC/refs/heads/nodeA/leverdemo.JPG",
