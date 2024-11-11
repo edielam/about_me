@@ -19,7 +19,7 @@ export const myProjects = [
     title: "CortexCode",
     description: `A collaborative code editor for compute sharing among peers for resource intensive tasks over a P2P network, built with Rust, Tauri, React and Libp2p(quic).`,
     image:
-      "https://raw.githubusercontent.com/edielam/about_me/portfolio/src/assets/cortex/d7.png",
+      "https://raw.githubusercontent.com/edielam/TerminalEditor-CC/refs/heads/nodeA/leverdemo.JPG",
     link: "https://github.com/edielam/TerminalEditor-CC",
     skills: [
       "Rust",
