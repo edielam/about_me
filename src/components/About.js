@@ -141,27 +141,26 @@ const About = () => {
             <Icon>
               <FaProjectDiagram />
             </Icon>
-            Recent Project: CortexCode
+            Recent Project: Lever
           </SectionTitle>
           <AboutText>
-            One of my recent projects, CortexCode, is a testament to my
-            philosophy of letting project goals guide technology choices.
-            Frustrated with resource constraints while fine-tuning large
-            language models for a Kaggle AI Olympiad competition, I developed a
-            peer-to-peer collaborative code editor with a runtime environment
-            for compute sharing. This was my first major Rust-based project.
-            Even though I was more familiar with Java and Python, I recognized
-            that using Rust with Tauri was a superior choice to Electron,
-            aligning perfectly with the project's performance and resource
-            efficiency goals.
+            One of my recent projects, Lever, is a testament to my philosophy of
+            letting project goals guide technology choices. Frustrated with
+            resource constraints while fine-tuning large language models for a
+            Kaggle AI Olympiad competition, I developed a peer-to-peer
+            collaborative code editor with a runtime environment for compute
+            sharing. This was my first major Rust-based project. Even though I
+            was more familiar with Java and Python, I recognized that using Rust
+            with Tauri was a superior choice to Electron, aligning perfectly
+            with the project's performance and resource efficiency goals.
           </AboutText>
           <AboutText>
-            Developing CortexCode has been highly rewarding. It allowed me to
-            dive deep into concurrency systems, explore network security, and
+            Developing Lever has been highly rewarding. It allowed me to dive
+            deep into concurrency systems, explore network security, and
             challenge myself in system engineering, especially while embedding a
             terminal emulator. It's projects like these that remind me why I
-            love what I do. I eagerly anticipate my next venture once CortexCode
-            is complete.
+            love what I do. I eagerly anticipate my next venture once Lever is
+            complete.
           </AboutText>
         </Section>
 
